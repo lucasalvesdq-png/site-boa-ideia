@@ -20,6 +20,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     nav.querySelectorAll("a").forEach(function (link) {
+      var ehLinkPaiComSub =
+        link.parentElement &&
+        link.parentElement.classList.contains("nav-item--tem-sub") &&
+        link.parentElement.querySelector(":scope > a") === link;
+      if (ehLinkPaiComSub) return;
       link.addEventListener("click", fecharMenu);
     });
 
@@ -48,7 +53,104 @@ document.addEventListener("DOMContentLoaded", function () {
         ativar(botao.dataset.tab);
       });
     });
+
+    grupo.dataset.ativar = "1";
+    grupo.ativarAba = ativar;
   });
+
+  /* Menu cascata — submenus em acordeão dentro do drawer mobile */
+  function submenusMobile() {
+    document.querySelectorAll(".nav-item--tem-sub > a").forEach(function (link) {
+      link.addEventListener("click", function (evento) {
+        if (window.innerWidth > 860) return;
+        var item = link.closest(".nav-item--tem-sub");
+        if (!item) return;
+        evento.preventDefault();
+        var estavaAberto = item.classList.contains("aberto");
+        document.querySelectorAll(".nav-item--tem-sub.aberto").forEach(function (outro) {
+          if (outro !== item) outro.classList.remove("aberto");
+        });
+        item.classList.toggle("aberto", !estavaAberto);
+      });
+    });
+  }
+  submenusMobile();
+
+  /* Ativa a aba certa ao abrir uma página vinda de um link com #âncora do menu cascata */
+  function ativarAbaPorHash() {
+    var hash = window.location.hash.replace("#", "");
+    if (!hash) return;
+    document.querySelectorAll(".tabs[data-ativar]").forEach(function (grupo) {
+      var painel = grupo.querySelector('.tab-painel[data-tab-painel="' + hash + '"]');
+      if (painel && typeof grupo.ativarAba === "function") {
+        grupo.ativarAba(hash);
+        painel.scrollIntoView({ block: "start" });
+      }
+    });
+  }
+  ativarAbaPorHash();
+  window.addEventListener("hashchange", ativarAbaPorHash);
+
+  /* Carrossel "O Boa Ideia por dentro" — snap-scroll com setas e dots */
+  document.querySelectorAll("[data-carrossel]").forEach(function (carrossel) {
+    var trilho = carrossel.querySelector(".carrossel-trilho");
+    var prev = carrossel.querySelector("[data-carrossel-prev]");
+    var next = carrossel.querySelector("[data-carrossel-next]");
+    var dotsContainer = carrossel.querySelector("[data-carrossel-dots]");
+    var slides = Array.prototype.slice.call(carrossel.querySelectorAll(".carrossel-slide"));
+    if (!trilho || !slides.length) return;
+
+    var dots = [];
+    if (dotsContainer) {
+      slides.forEach(function (_, indice) {
+        var dot = document.createElement("button");
+        dot.type = "button";
+        dot.setAttribute("aria-label", "Ir para foto " + (indice + 1));
+        dot.setAttribute("aria-current", indice === 0 ? "true" : "false");
+        dot.addEventListener("click", function () {
+          slides[indice].scrollIntoView({ behavior: "smooth", inline: "start", block: "nearest" });
+        });
+        dotsContainer.appendChild(dot);
+        dots.push(dot);
+      });
+    }
+
+    function rolar(direcao) {
+      var largura = slides[0].getBoundingClientRect().width + 20;
+      trilho.scrollBy({ left: direcao * largura, behavior: "smooth" });
+    }
+
+    if (prev) prev.addEventListener("click", function () { rolar(-1); });
+    if (next) next.addEventListener("click", function () { rolar(1); });
+
+    if ("IntersectionObserver" in window && dots.length) {
+      var observadorSlides = new IntersectionObserver(
+        function (entradas) {
+          entradas.forEach(function (entrada) {
+            var indice = slides.indexOf(entrada.target);
+            if (indice === -1) return;
+            if (entrada.isIntersecting) {
+              dots.forEach(function (d, i) {
+                d.setAttribute("aria-current", i === indice ? "true" : "false");
+              });
+            }
+          });
+        },
+        { root: trilho, threshold: 0.6 }
+      );
+      slides.forEach(function (slide) { observadorSlides.observe(slide); });
+    }
+  });
+
+  /* Indicador de scroll no banner cheio — desce para a seção seguinte */
+  var scrollCue = document.querySelector("[data-scroll-cue]");
+  if (scrollCue) {
+    scrollCue.addEventListener("click", function () {
+      var proxima = scrollCue.closest("section");
+      var alvo = proxima && proxima.nextElementSibling;
+      if (alvo) alvo.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }
 
   var header = document.querySelector(".header");
   if (header) {

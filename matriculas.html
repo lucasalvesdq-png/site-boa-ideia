@@ -11,6 +11,14 @@
 
   <div class="barra-topo">
     <div class="container">
+      <div class="redes-sociais redes-sociais--mini">
+        <a class="rede-btn" href="https://www.instagram.com/colegioboaideia" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4.3" stroke="currentColor" stroke-width="1.6"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor"/></svg>
+        </a>
+        <a class="rede-btn" href="https://wa.me/5575988655286?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20Coopex%20Col%C3%A9gio%20Boa%20Ideia." target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 3.5a8.4 8.4 0 0 0-7.2 12.7L3.5 20.5l4.4-1.2A8.4 8.4 0 1 0 12 3.5z" stroke="currentColor" stroke-width="1.5"/><path d="M8.7 8.7c-.2.4-.6 1.3-.3 2.4.4 1.5 2 3.2 3.5 3.9 1.1.5 2 .4 2.4.2.3-.1.9-.6 1.1-1.1.1-.3.1-.5 0-.6-.1-.1-1.3-.7-1.5-.8-.2-.1-.3-.1-.5.1-.1.2-.5.7-.6.8-.1.1-.2.1-.4 0-.6-.3-1.2-.6-1.7-1.2-.4-.5-.7-1-.9-1.4-.1-.2 0-.3.1-.4l.4-.5c.1-.1.1-.3 0-.4-.1-.2-.5-1.3-.7-1.7-.2-.4-.4-.3-.5-.3h-.4c-.2 0-.4 0-.5.1z" fill="currentColor"/></svg>
+        </a>
+      </div>
       <a href="portal-educacional.html">Portal do Aluno</a>
       <a href="portal-educacional.html">Portal do Professor</a>
       <a href="contato.html">Fale conosco</a>
@@ -25,10 +33,37 @@
       <nav class="nav" id="nav-principal">
         <ul class="nav-links">
           <li><a href="index.html">Início</a></li>
-          <li><a href="quem-somos.html">Quem Somos</a></li>
-          <li><a href="niveis-de-ensino.html">Níveis de Ensino</a></li>
-          <li><a href="saiba-mais.html">Saiba Mais</a></li>
-          <li><a href="matriculas.html" aria-current="page">Matrículas</a></li>
+          <li class="nav-item nav-item--tem-sub">
+            <a href="quem-somos.html">Quem Somos <span class="nav-caret" aria-hidden="true">&#9662;</span></a>
+            <ul class="nav-sub">
+              <li><a href="quem-somos.html#historia">Hist&oacute;ria</a></li>
+              <li><a href="quem-somos.html#mvv">Miss&atilde;o, vis&atilde;o e valores</a></li>
+              <li><a href="quem-somos.html#equipe">Nosso time</a></li>
+              <li><a href="quem-somos.html#estrutura">Estrutura</a></li>
+            </ul>
+          </li>
+          <li class="nav-item nav-item--tem-sub">
+            <a href="niveis-de-ensino.html">N&iacute;veis de Ensino <span class="nav-caret" aria-hidden="true">&#9662;</span></a>
+            <ul class="nav-sub">
+              <li><a href="niveis-de-ensino.html#infantil">Educa&ccedil;&atilde;o Infantil</a></li>
+              <li><a href="niveis-de-ensino.html#fund-iniciais">Fund. Anos Iniciais</a></li>
+              <li><a href="niveis-de-ensino.html#fund-finais">Fund. Anos Finais</a></li>
+              <li><a href="niveis-de-ensino.html#medio">Ensino M&eacute;dio</a></li>
+            </ul>
+          </li>
+          <li class="nav-item nav-item--tem-sub">
+            <a href="saiba-mais.html">Saiba Mais <span class="nav-caret" aria-hidden="true">&#9662;</span></a>
+            <ul class="nav-sub">
+              <li><a href="saiba-mais.html#projetos">SAS Enem</a></li>
+              <li><a href="saiba-mais.html#projetos">Provinha SAS</a></li>
+              <li><a href="saiba-mais.html#projetos">M&eacute;todo Pleno</a></li>
+              <li><a href="saiba-mais.html#projetos">Rob&oacute;tica</a></li>
+              <li><a href="saiba-mais.html#projetos">Musicaliza&ccedil;&atilde;o</a></li>
+              <li><a href="saiba-mais.html#bilingue">Programa Bil&iacute;ngue</a></li>
+              <li><a href="saiba-mais.html#eventos">Cobertura de eventos</a></li>
+            </ul>
+          </li>
+          <li><a href="matriculas.html" aria-current="page">Matr&iacute;culas</a></li>
           <li><a href="contato.html">Contato</a></li>
         </ul>
         <a href="contato.html" class="btn btn-secundario" style="color:var(--texto-claro); border-color: var(--texto-claro);">Agende uma visita</a>
@@ -158,33 +193,73 @@
   </main>
 
   <footer class="footer">
-    <div class="container">
-      <div>
-        <h3>Coopex Colégio Boa Ideia</h3>
-        <p>R. da Concórdia, 114 — Gen. Dutra<br />Paulo Afonso — BA, 48607-240</p>
-      </div>
-      <div>
-        <h3>Contato</h3>
-        <div class="aviso-bloqueio" style="padding:0.75rem 0.9rem; font-size:0.85rem;">
-          <p>Aguardando telefone, e-mail e horário de atendimento.</p>
+    <img class="deco deco-float" src="assets/img/elemento-asterisco-tracado.png" alt="" aria-hidden="true" style="top:8%; right:4%; width:130px; opacity:.06; --rot:0deg; --atraso:.2s;" />
+    <div class="footer-topo">
+      <div class="container footer-grid">
+        <div class="footer-marca">
+          <img class="footer-logo" src="assets/img/logo-boa-ideia.png" alt="Coopex Colégio Boa Ideia" />
+          <p class="footer-slogan">&ldquo;Toda grande conquista começa com uma boa ideia.&rdquo;</p>
+          <div class="redes-sociais">
+            <a class="rede-btn" href="https://www.instagram.com/colegioboaideia" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4.3" stroke="currentColor" stroke-width="1.6"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor"/></svg>
+            </a>
+            <a class="rede-btn" href="https://www.facebook.com/coopex.colegioboaideia/" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="9.5" stroke="currentColor" stroke-width="1.6"/><path d="M13.5 21v-7h2.2l.3-2.6h-2.5V9.7c0-.75.2-1.26 1.28-1.26h1.37V6.1c-.24-.03-1.05-.1-2-.1-1.98 0-3.34 1.21-3.34 3.43v1.91H8.5V13.9h2.06V21" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="rede-btn" href="https://www.youtube.com/@colegioboaideia" target="_blank" rel="noopener" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="4" stroke="currentColor" stroke-width="1.6"/><path d="M10.3 9.3v5.4l4.9-2.7-4.9-2.7z" fill="currentColor"/></svg>
+            </a>
+            <a class="rede-btn" href="https://wa.me/5575988655286?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20Coopex%20Col%C3%A9gio%20Boa%20Ideia." target="_blank" rel="noopener" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 3.5a8.4 8.4 0 0 0-7.2 12.7L3.5 20.5l4.4-1.2A8.4 8.4 0 1 0 12 3.5z" stroke="currentColor" stroke-width="1.5"/><path d="M8.7 8.7c-.2.4-.6 1.3-.3 2.4.4 1.5 2 3.2 3.5 3.9 1.1.5 2 .4 2.4.2.3-.1.9-.6 1.1-1.1.1-.3.1-.5 0-.6-.1-.1-1.3-.7-1.5-.8-.2-.1-.3-.1-.5.1-.1.2-.5.7-.6.8-.1.1-.2.1-.4 0-.6-.3-1.2-.6-1.7-1.2-.4-.5-.7-1-.9-1.4-.1-.2 0-.3.1-.4l.4-.5c.1-.1.1-.3 0-.4-.1-.2-.5-1.3-.7-1.7-.2-.4-.4-.3-.5-.3h-.4c-.2 0-.4 0-.5.1z" fill="currentColor"/></svg>
+            </a>
+            <!-- TikTok pendente — ativar quando o col&eacute;gio confirmar o perfil
+            <a class="rede-btn" href="#" target="_blank" rel="noopener" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M14.5 3.5c.4 2 1.8 3.4 3.9 3.6v2.6c-1.4 0-2.7-.4-3.9-1.2v6.1c0 3-2.2 5-5 5-2.7 0-5-2.1-5-5 0-2.8 2.2-5 5-5 .3 0 .6 0 .9.1v2.7c-.3-.1-.6-.2-.9-.2-1.3 0-2.4 1-2.4 2.4 0 1.4 1.1 2.4 2.4 2.4 1.4 0 2.5-1.1 2.5-2.6V3.5h2.5z" stroke="currentColor" stroke-width="0.4" fill="currentColor"/></svg>
+            </a>
+            -->
+          </div>
         </div>
-      </div>
-      <div>
-        <h3>Redes Sociais</h3>
-        <p>
-          <a class="icone-social" href="https://www.instagram.com/colegioboaideia" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4.3" stroke="currentColor" stroke-width="1.6"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor"/></svg>
-            @colegioboaideia
-          </a>
-        </p>
-      </div>
-      <div class="footer-selo">
-        <h3>Mantenedora</h3>
-        <img src="assets/img/logo-coopex.png" alt="COOPEX" />
+        <div class="footer-coluna">
+          <h3>Navegação</h3>
+          <ul class="footer-links">
+            <li><a href="quem-somos.html">Quem Somos</a></li>
+            <li><a href="niveis-de-ensino.html">Níveis de Ensino</a></li>
+            <li><a href="saiba-mais.html">Saiba Mais</a></li>
+            <li><a href="matriculas.html">Matrículas</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </div>
+        <div class="footer-coluna">
+          <h3>Contato</h3>
+          <ul class="footer-contato-lista">
+            <li>
+              <span class="footer-icone"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 21s7-7.5 7-12a7 7 0 1 0-14 0c0 4.5 7 12 7 12z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9" r="2.3" stroke="currentColor" stroke-width="1.6"/></svg></span>
+              R. da Concórdia, 114 — Gen. Dutra, Paulo Afonso — BA, 48607-240
+            </li>
+            <li>
+              <span class="footer-icone"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="3" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 6l8.5 6.5L20.5 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <a href="mailto:secretaria@colegioboaideia.com.br">secretaria@colegioboaideia.com.br</a>
+            </li>
+            <li>
+              <span class="footer-icone"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="9.5" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3.5 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              Seg. a sex., 7h&ndash;11h30 &middot; 13h&ndash;17h30
+            </li>
+            <li>
+              <span class="footer-icone"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 3.5a8.4 8.4 0 0 0-7.2 12.7L3.5 20.5l4.4-1.2A8.4 8.4 0 1 0 12 3.5z" stroke="currentColor" stroke-width="1.5"/><path d="M8.7 8.7c-.2.4-.6 1.3-.3 2.4.4 1.5 2 3.2 3.5 3.9 1.1.5 2 .4 2.4.2.3-.1.9-.6 1.1-1.1.1-.3.1-.5 0-.6-.1-.1-1.3-.7-1.5-.8-.2-.1-.3-.1-.5.1-.1.2-.5.7-.6.8-.1.1-.2.1-.4 0-.6-.3-1.2-.6-1.7-1.2-.4-.5-.7-1-.9-1.4-.1-.2 0-.3.1-.4l.4-.5c.1-.1.1-.3 0-.4-.1-.2-.5-1.3-.7-1.7-.2-.4-.4-.3-.5-.3h-.4c-.2 0-.4 0-.5.1z" fill="currentColor"/></svg></span>
+              <a href="https://wa.me/5575988655286?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20Coopex%20Col%C3%A9gio%20Boa%20Ideia." target="_blank" rel="noopener">(75) 98865-5286</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-coluna footer-selo-coluna">
+          <h3>Mantenedora</h3>
+          <img src="assets/img/logo-coopex.png" alt="COOPEX" />
+        </div>
       </div>
     </div>
     <div class="footer-base">
-      © 2026 Coopex Colégio Boa Ideia. Todos os direitos reservados.
+      <div class="container">
+        © 2026 Coopex Colégio Boa Ideia. Todos os direitos reservados.
+      </div>
     </div>
   </footer>
 
