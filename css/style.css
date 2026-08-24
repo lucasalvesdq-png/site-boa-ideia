@@ -1789,20 +1789,59 @@ h3.pendente {
   text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.25);
 }
 
-/* ---------- §1 Hero — banner cheio ---------- */
+/* ---------- §1 Hero — carrossel de banners ---------- */
 
 .hero-banner {
   position: relative;
   overflow: hidden;
-  min-height: 100vh;
+  height: 100vh;
+  min-height: 480px;
   line-height: 0;
 }
 
-.hero-banner img {
+#hero-carrossel .carrossel-trilho {
   width: 100%;
-  height: 100vh;
+  height: 100%;
+}
+
+#hero-carrossel .carrossel-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: center top;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+#hero-carrossel .carrossel-slide.ativo {
+  opacity: 1;
+}
+
+.carrossel-pontos {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 3;
+}
+
+.carrossel-ponto {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  border: 1.5px solid rgba(255, 255, 255, 0.7);
+  transition: background 0.3s, transform 0.3s;
+  cursor: default;
+}
+
+.carrossel-ponto.ativo {
+  background: var(--branco);
+  transform: scale(1.3);
 }
 
 .hero-scroll-cue {

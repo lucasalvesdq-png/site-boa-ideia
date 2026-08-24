@@ -142,6 +142,22 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  /* Carrossel do hero — troca a cada 3 segundos */
+  (function () {
+    var slides = document.querySelectorAll("#hero-carrossel .carrossel-slide");
+    var pontos = document.querySelectorAll("#hero-carrossel .carrossel-ponto");
+    if (!slides.length) return;
+    var atual = 0;
+    function irPara(n) {
+      slides[atual].classList.remove("ativo");
+      pontos[atual].classList.remove("ativo");
+      atual = (n + slides.length) % slides.length;
+      slides[atual].classList.add("ativo");
+      pontos[atual].classList.add("ativo");
+    }
+    setInterval(function () { irPara(atual + 1); }, 3000);
+  })();
+
   /* Indicador de scroll no banner cheio — desce para a seção seguinte */
   var scrollCue = document.querySelector("[data-scroll-cue]");
   if (scrollCue) {

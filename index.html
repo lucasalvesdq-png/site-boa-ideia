@@ -79,9 +79,18 @@
 
   <main>
 
-    <!-- HERO — banner 1 de 3 (slider futuro; por ora só este) -->
-    <section class="hero-banner">
-      <img src="assets/img/banner-home.png" alt="Coopex Colégio Boa Ideia — Você na nossa história" />
+    <!-- HERO — carrossel de banners -->
+    <section class="hero-banner" id="hero-carrossel">
+      <div class="carrossel-trilho">
+        <img class="carrossel-slide ativo" src="assets/img/banner-1.png" alt="Você na nossa história — Coopex Colégio Boa Ideia" />
+        <img class="carrossel-slide" src="assets/img/banner-2.png" alt="Sua história de sucesso começa aqui — Coopex Colégio Boa Ideia" />
+        <img class="carrossel-slide" src="assets/img/banner-3.png" alt="Matrículas abertas — Coopex Colégio Boa Ideia" />
+      </div>
+      <div class="carrossel-pontos" aria-hidden="true">
+        <span class="carrossel-ponto ativo"></span>
+        <span class="carrossel-ponto"></span>
+        <span class="carrossel-ponto"></span>
+      </div>
       <button class="hero-scroll-cue" type="button" data-scroll-cue aria-label="Rolar para o próximo conteúdo">
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
