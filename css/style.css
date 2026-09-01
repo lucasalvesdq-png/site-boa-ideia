@@ -195,6 +195,12 @@ img {
   justify-content: center;
 }
 
+/* Foto real ocupando o mesmo espaço reservado pelo placeholder */
+img.img-ph {
+  display: block;
+  object-fit: cover;
+}
+
 .img-ph::before {
   content: "";
   position: absolute;
@@ -1139,6 +1145,14 @@ h3.pendente {
   --prop: 16 / 9;
   border-radius: 0;
   cursor: pointer;
+}
+
+.card-video .video-capa img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .card-video .video-play {
