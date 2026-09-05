@@ -1121,7 +1121,7 @@ h3.pendente {
   top: -3px;
   width: 22px;
   height: 35px;
-  background: url("../assets/img/elemento-lampada.png") no-repeat center / contain;
+  background: url("../assets/img/elemento-lampada.svg") no-repeat center / contain;
 }
 
 .linha-tempo-item .ano {
@@ -1624,26 +1624,79 @@ h3.pendente {
 .topo-pagina {
   position: relative;
   overflow: hidden;
+  display: flex;
+  align-items: flex-end;
   color: var(--branco);
+  /* Banda proporcional à largura da tela, com limites: evita a "faixa fininha"
+     muito cortada em telas largas e o excesso de altura em telas médias. */
+  min-height: clamp(180px, 24vw, 360px);
+}
+
+/* Cor da marca como base — fallback se a imagem falhar e fundo quando a
+   foto é ocultada no mobile. */
+.topo-pagina .hero-fundo {
+  background: linear-gradient(150deg, var(--verde) 0%, var(--verde-escuro) 100%);
+}
+
+.topo-pagina .hero-fundo img.img-ph {
+  object-position: center 40%;
+}
+
+/* Página sem foto de topo (ex.: Contato): reduz o asterisco-marca d'água
+   para um detalhe discreto no canto, em vez de um bloco gigante no centro. */
+.topo-pagina .hero-fundo .img-ph::before {
+  background-size: auto 78%;
+  background-position: right -40px center;
+  opacity: 0.08;
 }
 
 .topo-pagina .hero-fundo::after {
-  background: linear-gradient(
-    100deg,
-    rgba(11, 74, 63, 0.9) 0%,
-    rgba(11, 74, 63, 0.62) 100%
-  );
+  background:
+    linear-gradient(
+      95deg,
+      rgba(9, 60, 51, 0.92) 0%,
+      rgba(9, 60, 51, 0.78) 32%,
+      rgba(9, 60, 51, 0.42) 64%,
+      rgba(9, 60, 51, 0.16) 100%
+    ),
+    linear-gradient(0deg, rgba(9, 60, 51, 0.55) 0%, rgba(9, 60, 51, 0) 58%);
 }
 
 .topo-pagina .container {
   position: relative;
   z-index: 1;
-  padding: 68px 24px 76px;
+  padding: 44px 24px 36px;
 }
 
 .topo-pagina h1 {
   color: var(--branco);
   margin: 0;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.28);
+}
+
+@media (max-width: 640px) {
+  .topo-pagina {
+    min-height: 150px;
+    align-items: center;
+  }
+
+  /* Nas telas estreitas a foto 3,7:1 fica muito ampliada e desalinhada —
+     mostramos só o degradê da marca, garantindo leitura nítida do título. */
+  .topo-pagina .hero-fundo img.img-ph {
+    display: none;
+  }
+
+  .topo-pagina .hero-fundo::after {
+    background: linear-gradient(
+      120deg,
+      rgba(9, 60, 51, 0.34) 0%,
+      rgba(9, 60, 51, 0) 72%
+    );
+  }
+
+  .topo-pagina .container {
+    padding: 28px 20px;
+  }
 }
 
 .breadcrumb {
