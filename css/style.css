@@ -2784,3 +2784,168 @@ h3.pendente {
     gap: 28px;
   }
 }
+
+/* Formulário — selects e 2ª seção numerada */
+.campo select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--cinza-borda);
+  border-radius: var(--raio);
+  font-family: var(--fonte-corpo);
+  font-size: 0.98rem;
+  color: var(--texto);
+  background: var(--fundo-secao);
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.campo select:focus {
+  outline: none;
+  border-color: var(--verde);
+  background: var(--branco);
+  box-shadow: 0 0 0 3px rgba(16, 100, 84, 0.12);
+}
+
+.form-secao-titulo--2 {
+  margin-top: 14px;
+  padding-top: 16px;
+  border-top: 1px solid var(--cinza-borda);
+}
+
+/* ============================================================
+   Ajustes 2026-09 — WhatsApp flutuante, ampliar imagens, legendas na galeria
+   ============================================================ */
+
+/* ---------- Botão flutuante de WhatsApp (canto inferior direito) ---------- */
+.wpp-flutuante {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 70;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.wpp-flutuante svg {
+  width: 32px;
+  height: 32px;
+}
+
+.wpp-flutuante:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.3);
+}
+
+.wpp-flutuante:focus-visible {
+  outline: 2px solid var(--verde-neon);
+  outline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+  .wpp-flutuante {
+    right: 14px;
+    bottom: 14px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .wpp-flutuante svg {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* ---------- Ampliar imagens (lightbox) ---------- */
+.zoomavel {
+  cursor: zoom-in;
+}
+
+.zoom-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(11, 36, 31, 0.9);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.zoom-overlay.aberto {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.zoom-overlay img {
+  max-width: min(1100px, 94vw);
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  border-radius: var(--raio);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  cursor: zoom-out;
+}
+
+.zoom-fechar {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.zoom-fechar:hover {
+  background: rgba(0, 0, 0, 0.55);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zoom-overlay {
+    transition: none;
+  }
+}
+
+/* ---------- Galeria com legendas ---------- */
+.galeria figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.galeria figure .img-ph {
+  --prop: 4 / 3;
+}
+
+.galeria figcaption {
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+  line-height: 1.4;
+}
+
+/* Ícones sociais reposicionados no rodapé (abaixo do Contato) */
+.footer-coluna .redes-sociais {
+  margin-top: 20px;
+}

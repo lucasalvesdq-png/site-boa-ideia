@@ -231,4 +231,65 @@ document.addEventListener("DOMContentLoaded", function () {
     aplicarEstado();
     document.body.appendChild(botaoProvisorio);
   }
+
+  /* Ampliar imagens — clique abre a foto em tela cheia (lightbox) */
+  (function () {
+    var seletor = [
+      ".galeria img",
+      ".split-imagem img.img-ph",
+      ".card-foto img.img-ph",
+      ".carrossel-secao .carrossel-slide img",
+      ".venha-visitar-foto img",
+      ".video-capa img",
+      ".bloco-inscricao-banner img"
+    ].join(",");
+
+    var imagens = Array.prototype.slice.call(document.querySelectorAll(seletor));
+    if (!imagens.length) return;
+
+    var overlay = document.createElement("div");
+    overlay.className = "zoom-overlay";
+    overlay.setAttribute("role", "dialog");
+    overlay.setAttribute("aria-modal", "true");
+    overlay.innerHTML =
+      '<button type="button" class="zoom-fechar" aria-label="Fechar">×</button><img alt="" />';
+    document.body.appendChild(overlay);
+
+    var overlayImg = overlay.querySelector("img");
+    var btnFechar = overlay.querySelector(".zoom-fechar");
+
+    function abrir(src, alt) {
+      overlayImg.src = src;
+      overlayImg.alt = alt || "";
+      overlay.classList.add("aberto");
+      document.body.style.overflow = "hidden";
+    }
+
+    function fechar() {
+      overlay.classList.remove("aberto");
+      document.body.style.overflow = "";
+      overlayImg.removeAttribute("src");
+    }
+
+    imagens.forEach(function (img) {
+      img.classList.add("zoomavel");
+      img.addEventListener("click", function () {
+        abrir(img.currentSrc || img.src, img.alt);
+      });
+    });
+
+    overlay.addEventListener("click", function (evento) {
+      if (
+        evento.target === overlay ||
+        evento.target === overlayImg ||
+        evento.target === btnFechar
+      ) {
+        fechar();
+      }
+    });
+
+    document.addEventListener("keydown", function (evento) {
+      if (evento.key === "Escape" && overlay.classList.contains("aberto")) fechar();
+    });
+  })();
 });
