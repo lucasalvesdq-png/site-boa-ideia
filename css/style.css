@@ -2594,3 +2594,193 @@ h3.pendente {
   background: var(--verde);
   color: var(--branco);
 }
+
+/* ============================================================
+   Ajustes solicitados — CTA header, contato compacto e form de inscrição
+   ============================================================ */
+
+/* Botão "Agende uma visita" do topo: efeito hover em verde-cana (neon) */
+.header-cta:hover {
+  background: var(--verde-neon);
+  color: var(--verde);
+  border-color: var(--verde-neon);
+  box-shadow: 0 8px 20px rgba(206, 237, 45, 0.28);
+}
+
+/* ---------- Contato: cartões compactos centralizados ---------- */
+.contato-duo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.contato-duo .card {
+  flex: 1 1 300px;
+  max-width: 360px;
+  text-align: center;
+}
+
+.card--compacto {
+  padding: 22px 24px;
+}
+
+.card--compacto h3 {
+  margin-bottom: 10px;
+}
+
+/* Ícones de rede social em fila única, mais compactos */
+.redes-sociais--linha {
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+/* ---------- Matrículas: bloco de inscrição (banner + formulário) ---------- */
+.bloco-inscricao {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 44px;
+  align-items: start;
+}
+
+.bloco-inscricao-banner {
+  padding-top: 8px;
+}
+
+.bloco-inscricao-banner h2 {
+  margin: 10px 0 14px;
+}
+
+.bloco-inscricao-banner p {
+  color: var(--texto-suave);
+  max-width: 48ch;
+}
+
+.lista-check {
+  list-style: none;
+  padding: 0;
+  margin: 22px 0 0;
+  display: grid;
+  gap: 12px;
+}
+
+.lista-check li {
+  position: relative;
+  padding-left: 34px;
+  color: var(--texto);
+  font-weight: 500;
+}
+
+.lista-check li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  top: -1px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--verde);
+  color: var(--verde-neon);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.form-inscricao {
+  background: var(--branco);
+  border: 1px solid var(--cinza-borda);
+  border-radius: var(--raio-grande);
+  box-shadow: var(--sombra-card);
+  overflow: hidden;
+}
+
+.form-inscricao-topo {
+  background: var(--verde);
+  color: var(--texto-claro);
+  text-align: center;
+  padding: 22px 24px;
+}
+
+.form-inscricao-topo h3 {
+  color: var(--branco);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 4px;
+  font-size: 1.35rem;
+}
+
+.form-inscricao-topo p {
+  margin: 0;
+  color: rgba(238, 247, 243, 0.85);
+  font-size: 0.92rem;
+}
+
+.form-inscricao-corpo {
+  padding: 24px;
+  display: grid;
+  gap: 14px;
+}
+
+.form-secao-titulo {
+  margin: 0;
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  color: var(--verde);
+  font-size: 0.98rem;
+}
+
+.campo {
+  display: grid;
+  gap: 6px;
+}
+
+.campo label {
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+  font-weight: 500;
+}
+
+.campo input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--cinza-borda);
+  border-radius: var(--raio);
+  font-family: var(--fonte-corpo);
+  font-size: 0.98rem;
+  color: var(--texto);
+  background: var(--fundo-secao);
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.campo input:focus {
+  outline: none;
+  border-color: var(--verde);
+  background: var(--branco);
+  box-shadow: 0 0 0 3px rgba(16, 100, 84, 0.12);
+}
+
+.form-consentimento {
+  margin: 4px 0 0;
+  font-size: 0.78rem;
+  color: var(--texto-suave);
+  line-height: 1.5;
+}
+
+.form-enviar {
+  width: 100%;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+@media (max-width: 880px) {
+  .bloco-inscricao {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
