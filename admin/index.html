@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Painel de imagens — Coopex Colégio Boa Ideia</title>
+  <link rel="icon" href="/assets/img/logo-boa-ideia.png" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/admin/admin.css" />
+</head>
+<body class="admin-body">
+
+  <!-- TELA DE LOGIN -->
+  <div class="admin-login" id="tela-login" hidden>
+    <form class="admin-login-card" id="form-login">
+      <div class="admin-login-logo-faixa">
+        <img class="admin-login-logo" src="/assets/img/logo-boa-ideia.png" alt="Coopex Colégio Boa Ideia" />
+      </div>
+      <h1>Painel de imagens</h1>
+      <p class="admin-login-sub">Entre com seu usuário e senha para gerenciar os banners e a Cobertura de Eventos do site.</p>
+
+      <label class="admin-campo">
+        <span>Usuário</span>
+        <input type="text" name="username" autocomplete="username" required autofocus />
+      </label>
+      <label class="admin-campo">
+        <span>Senha</span>
+        <input type="password" name="password" autocomplete="current-password" required />
+      </label>
+
+      <button type="submit" class="btn btn-primario admin-btn-full">Entrar</button>
+      <p class="admin-erro" id="login-erro" role="alert" hidden></p>
+    </form>
+  </div>
+
+  <!-- PAINEL -->
+  <div class="admin-painel" id="tela-painel" hidden>
+    <header class="admin-header">
+      <div class="admin-header-marca">
+        <img src="/assets/img/logo-boa-ideia.png" alt="" />
+        <div>
+          <strong>Painel de imagens</strong>
+          <span>Coopex Colégio Boa Ideia</span>
+        </div>
+      </div>
+      <div class="admin-header-acoes">
+        <span class="admin-usuario" id="admin-usuario"></span>
+        <a class="admin-link-site" href="/index.html" target="_blank" rel="noopener">Ver site ↗</a>
+        <button type="button" class="btn btn-secundario admin-btn-sair" id="btn-sair">Sair</button>
+      </div>
+    </header>
+
+    <nav class="admin-tabs" aria-label="Seções do painel">
+      <button type="button" class="admin-tab ativo" data-secao="banners">Banners do topo</button>
+      <button type="button" class="admin-tab" data-secao="eventos">Cobertura de Eventos</button>
+    </nav>
+
+    <main class="admin-conteudo">
+
+      <!-- BANNERS -->
+      <section class="admin-secao ativo" data-secao-painel="banners">
+        <div class="admin-secao-intro">
+          <h2>Banners do topo (home)</h2>
+          <p>São 3 imagens que se alternam no topo da página inicial, a cada 3 segundos. Clique em um quadro para trocar a imagem. Tamanho recomendado: 1920×1080px (paisagem).</p>
+        </div>
+        <div class="admin-banners" id="lista-banners"></div>
+      </section>
+
+      <!-- EVENTOS -->
+      <section class="admin-secao" data-secao-painel="eventos">
+        <div class="admin-secao-intro">
+          <h2>Cobertura de Eventos</h2>
+          <p>Fotos que aparecem na galeria "Cobertura de Eventos" (aba dentro de Saiba Mais). Adicione, remova, reordene arrastando e escreva a legenda de cada foto.</p>
+        </div>
+
+        <div class="admin-eventos-toolbar">
+          <label class="btn btn-primario admin-upload-btn">
+            + Adicionar fotos
+            <input type="file" id="input-nova-foto" accept="image/*" multiple hidden />
+          </label>
+          <span class="admin-dica">Arraste os cartões para reordenar.</span>
+        </div>
+
+        <div class="admin-eventos-grade" id="lista-eventos"></div>
+      </section>
+
+    </main>
+
+    <!-- BARRA DE PUBLICAÇÃO -->
+    <div class="admin-barra-publicar" id="barra-publicar" hidden>
+      <span id="publicar-status">Há alterações não publicadas.</span>
+      <div class="admin-barra-botoes">
+        <button type="button" class="btn btn-secundario" id="btn-descartar">Descartar</button>
+        <button type="button" class="btn btn-primario" id="btn-publicar">Publicar no site</button>
+      </div>
+    </div>
+
+    <div class="admin-toast" id="admin-toast" hidden></div>
+  </div>
+
+  <script src="/admin/admin.js"></script>
+</body>
+</html>

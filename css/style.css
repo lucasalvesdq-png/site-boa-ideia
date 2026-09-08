@@ -1906,6 +1906,22 @@ h3.pendente {
   opacity: 1;
 }
 
+/* Slide de banner com link opcional (definido pelo painel /admin) */
+#hero-carrossel .carrossel-slide-link {
+  display: block;
+}
+#hero-carrossel .carrossel-slide-link:not(.ativo) {
+  pointer-events: none;
+}
+#hero-carrossel .carrossel-slide-link .carrossel-slide-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
 .carrossel-pontos {
   position: absolute;
   bottom: 80px;
