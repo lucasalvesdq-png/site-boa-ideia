@@ -1,32 +1,126 @@
 [
-  { "img": "assets/img/matricula-processo.jpg", "legenda": "Tudo começa na secretaria: o processo de matrícula." },
-  { "img": "assets/img/cta-visita.jpg", "legenda": "A entrada principal do colégio." },
-  { "img": "assets/img/sobre-o-colegio.jpg", "legenda": "Portaria e acesso de famílias e alunos." },
-  { "img": "assets/img/video-capa-1.jpg", "legenda": "A fachada vista de quem chega." },
-  { "img": "assets/img/carrossel-boa-ideia-1.jpg", "legenda": "O colégio na rua, no bairro." },
-  { "img": "assets/img/carrossel-boa-ideia-6.jpg", "legenda": "Acesso exclusivo da Educação Infantil." },
-  { "img": "assets/img/estrutura-5.jpg", "legenda": "O bloco da Educação Infantil." },
-  { "img": "assets/img/estrutura-1.jpg", "legenda": "Pátio interno e áreas de convivência." },
-  { "img": "assets/img/carrossel-boa-ideia-5.jpg", "legenda": "Espaço aberto para a recreação." },
-  { "img": "assets/img/estrutura-2.jpg", "legenda": "Parque com balanços na área externa." },
-  { "img": "assets/img/estrutura-3.jpg", "legenda": "Playground da Educação Infantil." },
-  { "img": "assets/img/video-capa-2.jpg", "legenda": "Brinquedos pensados para os pequenos." },
-  { "img": "assets/img/carrossel-boa-ideia-2.jpg", "legenda": "Quadra coberta para o ano todo." },
-  { "img": "assets/img/estrutura-6.jpg", "legenda": "Ginásio coberto para educação física e eventos." },
-  { "img": "assets/img/estrutura-4.jpg", "legenda": "Quadra poliesportiva ao ar livre." },
-  { "img": "assets/img/carrossel-boa-ideia-4.jpg", "legenda": "Mais espaço para o esporte." },
-  { "img": "assets/img/nivel-infantil.jpg", "legenda": "Educação Infantil: primeiras descobertas." },
-  { "img": "assets/img/carrossel-boa-ideia-3.jpg", "legenda": "Atividade sensorial com massinha." },
-  { "img": "assets/img/video-capa-3.jpg", "legenda": "Aprender brincando." },
-  { "img": "assets/img/nivel-fund-iniciais.jpg", "legenda": "Fundamental — Anos Iniciais." },
-  { "img": "assets/img/proposta-pedagogica-sala-aula.jpg", "legenda": "Rotina de sala baseada na proposta pedagógica." },
-  { "img": "assets/img/nivel-fund-finais.jpg", "legenda": "Fundamental — Anos Finais." },
-  { "img": "assets/img/nivel-medio.jpg", "legenda": "Ensino Médio: preparação para as próximas escolhas." },
-  { "img": "assets/img/programa-bilingue.jpg", "legenda": "Programa Bilíngue no dia a dia da turma." },
-  { "img": "assets/img/evento-bilingue-3.jpg", "legenda": "Atividade prática orientada pela professora." },
-  { "img": "assets/img/evento-bilingue-1.jpg", "legenda": "Medalhas conquistadas pelas turmas." },
-  { "img": "assets/img/evento-bilingue-2.jpg", "legenda": "Gincana: corrida do saco no pátio." },
-  { "img": "assets/img/evento-bilingue-5.jpg", "legenda": "Confraternização entre as turmas." },
-  { "img": "assets/img/evento-bilingue-4.jpg", "legenda": "Festa Junina: apresentação no palco." },
-  { "img": "assets/img/evento-bilingue-6.jpg", "legenda": "Mostra Arte 2025, no ginásio." }
+  {
+    "img": "assets/img/matricula-processo.jpg",
+    "legenda": "Tudo começa na secretaria: o processo de matrícula."
+  },
+  {
+    "img": "assets/img/cta-visita.jpg",
+    "legenda": "A entrada principal do colégio."
+  },
+  {
+    "img": "assets/img/sobre-o-colegio.jpg",
+    "legenda": "Portaria e acesso de famílias e alunos."
+  },
+  {
+    "img": "assets/img/video-capa-1.jpg",
+    "legenda": "A fachada vista de quem chega."
+  },
+  {
+    "img": "assets/img/carrossel-boa-ideia-1.jpg",
+    "legenda": "O colégio na rua, no bairro."
+  },
+  {
+    "img": "assets/img/carrossel-boa-ideia-6.jpg",
+    "legenda": "Acesso exclusivo da Educação Infantil."
+  },
+  {
+    "img": "assets/img/estrutura-5.jpg",
+    "legenda": "O bloco da Educação Infantil."
+  },
+  {
+    "img": "assets/img/estrutura-1.jpg",
+    "legenda": "Pátio interno e áreas de convivência."
+  },
+  {
+    "img": "assets/img/carrossel-boa-ideia-5.jpg",
+    "legenda": "Espaço aberto para a recreação."
+  },
+  {
+    "img": "assets/img/estrutura-2.jpg",
+    "legenda": "Parque com balanços na área externa."
+  },
+  {
+    "img": "assets/img/estrutura-3.jpg",
+    "legenda": "Playground da Educação Infantil."
+  },
+  {
+    "img": "assets/img/video-capa-2.jpg",
+    "legenda": "Brinquedos pensados para os pequenos."
+  },
+  {
+    "img": "assets/img/carrossel-boa-ideia-2.jpg",
+    "legenda": "Quadra coberta para o ano todo."
+  },
+  {
+    "img": "assets/img/estrutura-6.jpg",
+    "legenda": "Ginásio coberto para educação física e eventos."
+  },
+  {
+    "img": "assets/img/estrutura-4.jpg",
+    "legenda": "Quadra poliesportiva ao ar livre."
+  },
+  {
+    "img": "assets/img/carrossel-boa-ideia-4.jpg",
+    "legenda": "Mais espaço para o esporte."
+  },
+  {
+    "img": "assets/img/nivel-infantil.jpg",
+    "legenda": "Educação Infantil: primeiras descobertas."
+  },
+  {
+    "img": "assets/img/carrossel-boa-ideia-3.jpg",
+    "legenda": "Atividade sensorial com massinha."
+  },
+  {
+    "img": "assets/img/video-capa-3.jpg",
+    "legenda": "Aprender brincando."
+  },
+  {
+    "img": "assets/img/nivel-fund-iniciais.jpg",
+    "legenda": "Fundamental — Anos Iniciais."
+  },
+  {
+    "img": "assets/img/proposta-pedagogica-sala-aula.jpg",
+    "legenda": "Rotina de sala baseada na proposta pedagógica."
+  },
+  {
+    "img": "assets/img/nivel-fund-finais.jpg",
+    "legenda": "Fundamental — Anos Finais."
+  },
+  {
+    "img": "assets/img/nivel-medio.jpg",
+    "legenda": "Ensino Médio: preparação para as próximas escolhas."
+  },
+  {
+    "img": "assets/img/programa-bilingue.jpg",
+    "legenda": "Programa Bilíngue no dia a dia da turma."
+  },
+  {
+    "img": "assets/img/evento-bilingue-3.jpg",
+    "legenda": "Atividade prática orientada pela professora."
+  },
+  {
+    "img": "assets/img/evento-bilingue-1.jpg",
+    "legenda": "Medalhas conquistadas pelas turmas."
+  },
+  {
+    "img": "assets/img/evento-bilingue-2.jpg",
+    "legenda": "Gincana: corrida do saco no pátio."
+  },
+  {
+    "img": "assets/img/evento-bilingue-5.jpg",
+    "legenda": "Confraternização entre as turmas."
+  },
+  {
+    "img": "assets/img/evento-bilingue-4.jpg",
+    "legenda": "Festa Junina: apresentação no palco."
+  },
+  {
+    "img": "assets/img/evento-bilingue-6.jpg",
+    "legenda": "Mostra Arte 2025, no ginásio."
+  },
+  {
+    "img": "assets/img/eventos/1788877593988-30.jpg",
+    "legenda": ""
+  }
 ]
