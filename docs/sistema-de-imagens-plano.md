@@ -1,6 +1,6 @@
 # Sistema de gerenciamento de imagens — Plano de implementação
 
-> **Status:** rascunho para aprovação (08/09/2026). Nada foi construído ainda — este documento é o estudo + plano que precisa de "ok" antes da implementação.
+> **Status:** aprovado e implementado (08/09/2026, [PR #1](https://github.com/lucasalvesdq-png/site-boa-ideia/pull/1), mesclado no `main`). Em produção na Vercel.
 
 ## 1. Objetivo
 
@@ -120,31 +120,31 @@ Vou preparar um script que gera o hash das senhas pra você, pra nem isso você 
 ## 7. Plano de implementação (fases e tasks)
 
 ### Fase 0 — Preparação (sem risco ao site no ar)
-- [ ] **T0.1** Criar `content/banners.json` e `content/eventos.json` já preenchidos com o conteúdo atual.
-- [ ] **T0.2** Criar a pasta `assets/img/eventos/` e (opcional) reorganizar as fotos de evento para lá.
+- [x] **T0.1** Criar `content/banners.json` e `content/eventos.json` já preenchidos com o conteúdo atual.
+- [x] **T0.2** Criar a pasta `assets/img/eventos/` e (opcional) reorganizar as fotos de evento para lá.
 
 ### Fase 1 — Deixar o site público "data-driven" (dirigido por dados)
-- [ ] **T1.1** Home: renderizar os 3 banners a partir de `banners.json`, mantendo o carrossel de 3s.
-- [ ] **T1.2** Saiba mais: renderizar a galeria a partir de `eventos.json`, mantendo legendas, lazy-load e o "ampliar imagem".
-- [ ] **T1.3** *Fallback* e verificação: página não quebra se o JSON faltar; testar no preview.
+- [x] **T1.1** Home: renderizar os 3 banners a partir de `banners.json`, mantendo o carrossel de 3s.
+- [x] **T1.2** Saiba mais: renderizar a galeria a partir de `eventos.json`, mantendo legendas, lazy-load e o "ampliar imagem".
+- [x] **T1.3** *Fallback* e verificação: página não quebra se o JSON faltar; testar no preview.
 
 ### Fase 2 — Backend seguro (Vercel Functions)
-- [ ] **T2.1** `api/login.js` + `api/session.js` + `api/logout.js` (sessão assinada, hash de senha).
-- [ ] **T2.2** `api/publish.js` (grava imagem + manifesto no GitHub via token).
-- [ ] **T2.3** Utilitário de sessão/segurança compartilhado, sem dependências.
+- [x] **T2.1** `api/login.js` + `api/session.js` + `api/logout.js` (sessão assinada, hash de senha).
+- [x] **T2.2** `api/publish.js` (grava imagem + manifesto no GitHub via token).
+- [x] **T2.3** Utilitário de sessão/segurança compartilhado, sem dependências.
 
 ### Fase 3 — Painel administrativo
-- [ ] **T3.1** Tela de login (`admin/`).
-- [ ] **T3.2** Gerenciador de **Banners** (trocar imagem, alt, link).
-- [ ] **T3.3** Gerenciador de **Cobertura de Eventos** (adicionar, remover, reordenar, legendar).
-- [ ] **T3.4** Otimização de imagem no navegador (resize + compressão) antes do envio.
-- [ ] **T3.5** Estados de carregando/sucesso/erro e proteção contra envio duplicado.
+- [x] **T3.1** Tela de login (`admin/`).
+- [x] **T3.2** Gerenciador de **Banners** (trocar imagem, alt, link).
+- [x] **T3.3** Gerenciador de **Cobertura de Eventos** (adicionar, remover, reordenar, legendar).
+- [x] **T3.4** Otimização de imagem no navegador (resize + compressão) antes do envio.
+- [x] **T3.5** Estados de carregando/sucesso/erro e proteção contra envio duplicado.
 
 ### Fase 4 — Configuração, guia e verificação
-- [ ] **T4.1** `docs/sistema-de-imagens-setup.md` — guia ilustrado do que configurar (token + variáveis).
-- [ ] **T4.2** Script gerador de hash de senha (`scripts/gerar-senha.mjs`).
-- [ ] **T4.3** Teste ponta a ponta no preview da Vercel (subir uma foto de verdade e ver publicar).
-- [ ] **T4.4** Ajustes finais de UX do painel.
+- [x] **T4.1** `docs/sistema-de-imagens-setup.md` — guia ilustrado do que configurar (token + variáveis).
+- [x] **T4.2** Script gerador de hash de senha (`scripts/gerar-senha.mjs`).
+- [x] **T4.3** Teste ponta a ponta no preview da Vercel (subir uma foto de verdade e ver publicar).
+- [x] **T4.4** Ajustes finais de UX do painel.
 
 ## 8. Riscos e mitigação
 
@@ -159,3 +159,18 @@ Vou preparar um script que gera o hash das senhas pra você, pra nem isso você 
 ## 9. Custo
 
 **R$ 0,00** de setup e **R$ 0,00** recorrente. Nenhuma assinatura, nenhum cartão, nenhum serviço pago. Depende apenas das contas gratuitas que você já usa (GitHub + Vercel).
+
+## 10. Migração futura: quando o site em produção for pra HostGator
+
+Combinado em 08/09/2026: quando o domínio definitivo do colégio for hospedado na **HostGator** (hospedagem compartilhada, cPanel), o painel `/admin` e as funções de backend (`api/*.js`) **não** vão junto — hospedagem compartilhada comum da HostGator não roda Node.js (só PHP), então essas funções não sobem lá como estão.
+
+**Decisão registrada — Caminho A, arquitetura híbrida:**
+
+- A **HostGator** passa a hospedar só o site visível ao público: as páginas HTML/CSS/JS e as imagens fixas (logos, elementos decorativos, fotos de níveis de ensino, etc.), via FTP ou o "Git Version Control" do cPanel, se o plano tiver.
+- O **painel `/admin` e as 4 funções continuam na Vercel** (permanece grátis — só a escola acessa esse endereço, o público nunca precisa dele), gravando as imagens/manifestos no GitHub exatamente como hoje.
+- `js/content.js` passa a buscar `content/banners.json` e `content/eventos.json` (e as imagens neles referenciadas) de um **endereço fixo** apontando para a Vercel/GitHub, em vez de um caminho relativo ao próprio domínio — com CORS liberado nesse endereço. Assim, uma publicação feita no painel aparece no site hospedado na HostGator automaticamente, sem nenhuma integração adicional.
+- Segredos (token do GitHub, senhas) continuam nunca chegando perto da HostGator — mais seguro, já que hospedagem compartilhada tem menos isolamento entre sites que a Vercel.
+
+**Por que esse caminho e não reescrever tudo em PHP para rodar 100% na HostGator:** o Caminho A não exige nenhuma mudança no que já foi testado e aprovado, mantém o histórico/reversão de imagens via Git, e continua R$ 0,00. Reescrever em PHP (Caminho B) foi considerado e descartado por enquanto — mais trabalho, perde o histórico de commits, e não traz benefício real dado que a Vercel free tier não tem custo nem depende do domínio final do site.
+
+**Quando a migração acontecer**, o ajuste é pequeno: mudar o endereço buscado em `js/content.js` (2 arquivos: `index.html` e `saiba-mais.html` usam o mesmo script) e liberar CORS na Vercel — sem tocar no painel, no backend ou nos manifestos.
