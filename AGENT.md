@@ -39,6 +39,15 @@ Não parta direto para editar markup de conteúdo ou layout sem um plano já apr
 
 A pasta [docs/](docs/README.md) reúne os documentos de referência desse processo: briefing do site, plano de copy (tom de voz) e guia de componentes HTML/CSS. Consulte-os antes de escrever copy ou markup novo.
 
+## Painel de imagens (`/admin`)
+
+Além das páginas estáticas, o repositório hospeda um pequeno painel administrativo (`admin/`) para a escola trocar/adicionar, sem editar código: os **3 banners do topo** da home e as **fotos da galeria "Cobertura de Eventos"** (`saiba-mais.html`). Arquitetura, decisão de custo (R$ 0, sem serviços novos) e as tasks estão em [docs/sistema-de-imagens-plano.md](docs/sistema-de-imagens-plano.md); o guia de configuração (token do GitHub, senhas, variáveis de ambiente) está em [docs/sistema-de-imagens-setup.md](docs/sistema-de-imagens-setup.md).
+
+- **`content/banners.json`** e **`content/eventos.json`** são a fonte de verdade do conteúdo dessas duas áreas. `index.html` e `saiba-mais.html` carregam esses arquivos via `js/content.js` (executa antes de `js/main.js`) e renderizam o carrossel/galeria a partir deles; se a busca falhar, a página não quebra (fallback silencioso).
+- **`api/*.js`** são Vercel Functions (Node, zero dependências) que autenticam o painel (login por usuário/senha com sessão em cookie assinado) e gravam as imagens/manifestos como commits no próprio repositório GitHub, via `GITHUB_TOKEN`. Segredos (`GITHUB_TOKEN`, `SESSION_SECRET`, `ADMIN_USERS`) vivem só como variável de ambiente na Vercel — nunca no repositório.
+- **`admin/`** é o painel em si (HTML/CSS/JS vanilla, reaproveitando `css/style.css`). Usa **caminhos absolutos** (`/admin/admin.js`, `/css/style.css`, etc.) de propósito — caminhos relativos ficam ambíguos dependendo de como a Vercel serve `/admin` com ou sem barra final.
+- Ao editar `js/main.js`, lembre que toda a inicialização (menu, carrossel, observador de animações, lightbox) foi movida para a função `iniciarSiteBoaIdeia()`, chamada só depois que `window.__boaIdeiaContentPromise` resolve — isso garante que o carrossel/galeria inicializem corretamente tanto com o conteúdo padrão quanto com o conteúdo já trocado pelo painel.
+
 ## Observação sobre o repositório
 
 Este diretório **não é um repositório git próprio** — o `.git` mais próximo fica em `/Users/macos/Documents` (pasta pai deste diretório), e contém histórico de um projeto não relacionado (`briefing-form`). Nada dentro desta pasta "Site - Boa Ideia" está atualmente rastreado/commitado. Tenha cuidado com `git add`/`git commit` aqui: a working tree inclui várias pastas irmãs não relacionadas dentro de `~/Documents`, então evite `git add -A`/`git add .` a partir da raiz do repositório.

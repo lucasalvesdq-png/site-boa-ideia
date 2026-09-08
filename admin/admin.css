@@ -1,0 +1,460 @@
+/* admin.css — estilos do painel /admin.
+   Reaproveita as variáveis de marca (--verde, --raio, --sombra-card, etc.)
+   já definidas em css/style.css, importado antes deste arquivo. */
+
+.admin-body {
+  background: var(--fundo-secao);
+  min-height: 100vh;
+}
+
+/* Garante que o atributo "hidden" sempre vença, mesmo em elementos que
+   também têm "display" definido explicitamente (ex.: .admin-login). */
+[hidden] {
+  display: none !important;
+}
+
+/* ---------- Login ---------- */
+.admin-login {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.admin-login-card {
+  width: 100%;
+  max-width: 380px;
+  background: var(--branco);
+  border-radius: var(--raio-grande);
+  box-shadow: var(--sombra-card);
+  padding: 0 32px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.admin-login-logo-faixa {
+  background: var(--verde-escuro);
+  margin: 0 -32px;
+  padding: 28px 32px;
+}
+
+.admin-login-logo {
+  width: 120px;
+}
+
+.admin-login-card h1 {
+  font-size: 1.4rem;
+  margin: 0;
+  color: var(--verde-escuro);
+}
+
+.admin-login-sub {
+  margin: 0 0 8px;
+  color: var(--texto-suave);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.admin-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--texto);
+}
+
+.admin-campo input {
+  font: inherit;
+  padding: 11px 14px;
+  border-radius: 10px;
+  border: 1.5px solid var(--cinza-borda);
+  outline: none;
+}
+
+.admin-campo input:focus {
+  border-color: var(--verde);
+}
+
+.admin-btn-full {
+  width: 100%;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.admin-erro {
+  margin: 0;
+  background: #fdecec;
+  color: #a3271f;
+  border: 1px solid #f4c6c2;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.85rem;
+}
+
+/* ---------- Painel ---------- */
+.admin-header {
+  background: var(--branco);
+  border-bottom: 1px solid var(--cinza-borda);
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.admin-header-marca {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.admin-header-marca img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.admin-header-marca strong {
+  display: block;
+  font-family: var(--fonte-titulo);
+  color: var(--verde-escuro);
+}
+
+.admin-header-marca span {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--texto-suave);
+}
+
+.admin-header-acoes {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.admin-usuario {
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+}
+
+.admin-link-site {
+  font-size: 0.85rem;
+  color: var(--verde);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.admin-link-site:hover {
+  text-decoration: underline;
+}
+
+.admin-btn-sair {
+  padding: 8px 16px;
+  font-size: 0.85rem;
+}
+
+.admin-tabs {
+  display: flex;
+  gap: 4px;
+  padding: 0 24px;
+  background: var(--branco);
+  border-bottom: 1px solid var(--cinza-borda);
+  overflow-x: auto;
+}
+
+.admin-tab {
+  border: none;
+  background: none;
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--texto-suave);
+  padding: 14px 16px;
+  cursor: pointer;
+  border-bottom: 2.5px solid transparent;
+  white-space: nowrap;
+}
+
+.admin-tab.ativo {
+  color: var(--verde-escuro);
+  border-bottom-color: var(--verde);
+}
+
+.admin-conteudo {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 24px 120px;
+}
+
+.admin-secao {
+  display: none;
+}
+
+.admin-secao.ativo {
+  display: block;
+}
+
+.admin-secao-intro h2 {
+  margin: 0 0 6px;
+  color: var(--verde-escuro);
+}
+
+.admin-secao-intro p {
+  margin: 0 0 24px;
+  color: var(--texto-suave);
+  font-size: 0.92rem;
+  max-width: 640px;
+}
+
+/* ---------- Cartões de banner ---------- */
+.admin-banners {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.admin-banner-card {
+  background: var(--branco);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra-card);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-banner-preview {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: var(--verde-claro) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3C/svg%3E");
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.admin-banner-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.admin-banner-preview-vazio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--verde);
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 16px;
+}
+
+.admin-banner-preview:hover .admin-banner-overlay,
+.admin-banner-preview:focus-within .admin-banner-overlay {
+  opacity: 1;
+}
+
+.admin-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 74, 63, 0.55);
+  color: var(--branco);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.85rem;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.admin-banner-body {
+  padding: 14px 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.admin-banner-slot {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--verde);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.admin-banner-body label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--texto);
+}
+
+.admin-banner-body input {
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1.5px solid var(--cinza-borda);
+}
+
+/* ---------- Eventos ---------- */
+.admin-eventos-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.admin-upload-btn {
+  cursor: pointer;
+}
+
+.admin-dica {
+  font-size: 0.82rem;
+  color: var(--texto-suave);
+}
+
+.admin-eventos-grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 18px;
+}
+
+.admin-evento-card {
+  background: var(--branco);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra-card);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: grab;
+}
+
+.admin-evento-card.arrastando {
+  opacity: 0.4;
+}
+
+.admin-evento-thumb {
+  aspect-ratio: 4 / 3;
+  background: var(--verde-claro);
+}
+
+.admin-evento-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.admin-evento-body {
+  padding: 10px 12px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.admin-evento-body textarea {
+  font: inherit;
+  font-size: 0.82rem;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1.5px solid var(--cinza-borda);
+  resize: vertical;
+  min-height: 46px;
+}
+
+.admin-evento-remover {
+  align-self: flex-end;
+  border: none;
+  background: none;
+  color: #a3271f;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 2px 4px;
+}
+
+.admin-evento-remover:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Barra de publicação ---------- */
+.admin-barra-publicar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--verde-escuro);
+  color: var(--texto-claro);
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  z-index: 10;
+  box-shadow: 0 -6px 24px rgba(0, 0, 0, 0.18);
+}
+
+.admin-barra-botoes {
+  display: flex;
+  gap: 10px;
+}
+
+.admin-barra-botoes .btn-secundario {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.5);
+  color: var(--texto-claro);
+}
+
+/* ---------- Toast ---------- */
+.admin-toast {
+  position: fixed;
+  right: 24px;
+  bottom: 90px;
+  background: var(--texto);
+  color: var(--branco);
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  max-width: 320px;
+  box-shadow: var(--sombra-card-hover);
+  z-index: 20;
+}
+
+.admin-toast.erro {
+  background: #a3271f;
+}
+
+.admin-toast.sucesso {
+  background: var(--verde-escuro);
+}
+
+@media (max-width: 640px) {
+  .admin-header {
+    padding: 12px 16px;
+  }
+  .admin-conteudo {
+    padding: 20px 16px 130px;
+  }
+  .admin-barra-publicar {
+    padding: 12px 16px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

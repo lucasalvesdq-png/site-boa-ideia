@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+function iniciarSiteBoaIdeia() {
   var toggle = document.querySelector(".nav-toggle");
   var nav = document.querySelector(".nav");
   var overlay = document.querySelector(".nav-overlay");
@@ -292,4 +292,14 @@ document.addEventListener("DOMContentLoaded", function () {
       if (evento.key === "Escape" && overlay.classList.contains("aberto")) fechar();
     });
   })();
+}
+
+/* Espera o conteúdo dinâmico (banners e galeria vindos de content/*.json,
+   ver js/content.js) antes de inicializar carrossel, galeria e observadores
+   de animação — assim tudo funciona corretamente tanto com o conteúdo
+   padrão quanto com o conteúdo já trocado pelo painel administrativo. Se
+   o site não tiver content.js carregado, inicia normalmente. */
+document.addEventListener("DOMContentLoaded", function () {
+  var espera = window.__boaIdeiaContentPromise || Promise.resolve();
+  espera.then(iniciarSiteBoaIdeia).catch(iniciarSiteBoaIdeia);
 });
