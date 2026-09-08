@@ -273,9 +273,10 @@
           </div>
           <a href="saiba-mais.html#eventos" class="link-ver-todas">Ver todas →</a>
         </div>
-        <!-- SUBSTITUIR: quando o colégio enviar 3 eventos recentes (foto de capa, data e resumo curto),
-             trocar os cards abaixo pelo conteúdo real. Enquanto isso, os cards apontam para o Instagram. -->
-        <div class="grid-coberturas">
+        <!-- Preenchido dinamicamente com os eventos cadastrados no painel /admin
+             (ver js/content.js). Os 3 cards abaixo são a reserva, mostrada só se
+             a busca do JSON falhar. -->
+        <div class="grid-coberturas" data-coberturas-grade>
           <article class="card-cobertura animar">
             <div class="card-cobertura-foto cantos-neon">
               <div class="img-ph" style="--prop:4/3;"></div>
