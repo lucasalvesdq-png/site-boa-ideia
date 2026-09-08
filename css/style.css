@@ -2996,6 +2996,38 @@ h3.pendente {
   }
 }
 
+/* ---------- Card de evento (Cobertura de Eventos) ---------- */
+.evento-card {
+  cursor: pointer;
+}
+
+.evento-card:focus-visible {
+  outline: 2px solid var(--verde);
+  outline-offset: 3px;
+}
+
+.evento-nao-encontrado {
+  text-align: center;
+  padding: 40px 16px;
+  color: var(--texto-suave);
+}
+
+.evento-voltar {
+  text-align: center;
+  margin-top: 32px;
+}
+
+.evento-voltar a {
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  color: var(--verde);
+  text-decoration: none;
+}
+
+.evento-voltar a:hover {
+  text-decoration: underline;
+}
+
 /* ---------- Galeria com legendas ---------- */
 .galeria figure {
   margin: 0;

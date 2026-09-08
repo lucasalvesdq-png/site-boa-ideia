@@ -1,6 +1,12 @@
 # Sistema de gerenciamento de imagens — Plano de implementação
 
 > **Status:** aprovado e implementado (08/09/2026, [PR #1](https://github.com/lucasalvesdq-png/site-boa-ideia/pull/1), mesclado no `main`). Em produção na Vercel.
+>
+> **Atualização v2 (08/09/2026):** o escopo original abaixo descreve a v1 (banner único por slot; galeria de eventos como fotos soltas). Depois de testado em produção, o usuário pediu duas mudanças, já implementadas:
+> - **Banners com versão desktop e mobile** — cada um dos 3 banners agora tem 2 imagens (`content/banners.json`: `{desktop, mobile, alt, link}`), e o site escolhe qual mostrar pelo tamanho da tela (ponto de corte 640px).
+> - **Cobertura de Eventos por evento**, não por foto solta — `content/eventos.json` passou a ser uma lista de eventos (`{id, titulo, descricao, data, capa, fotos[]}`). A aba "Cobertura de Eventos" mostra um card por evento (capa + título + descrição); ao clicar, abre `evento.html?id=<id>` — uma página-modelo única que lê o evento certo pela URL e mostra a galeria completa daquele evento. O painel ganhou um editor de eventos (capa, título, descrição, data) com uma sub-galeria de fotos por evento (adicionar/remover/reordenar/legendar), tudo arrastável.
+>
+> O restante deste documento (arquitetura, custo, riscos) permanece válido — só o formato dos dois manifestos JSON e a UI do painel mudaram.
 
 ## 1. Objetivo
 

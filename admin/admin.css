@@ -233,12 +233,40 @@
   flex-direction: column;
 }
 
+.admin-banner-previews {
+  display: flex;
+  gap: 1px;
+  background: var(--cinza-borda);
+}
+
+.admin-banner-preview-item {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-banner-preview-rotulo {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--texto-suave);
+  background: var(--fundo-secao);
+  padding: 5px 8px;
+  text-align: center;
+}
+
 .admin-banner-preview {
   position: relative;
   aspect-ratio: 16 / 9;
   background: var(--verde-claro) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3C/svg%3E");
   cursor: pointer;
   overflow: hidden;
+}
+
+.admin-banner-preview--mobile {
+  aspect-ratio: 3 / 4;
 }
 
 .admin-banner-preview img {
@@ -391,6 +419,168 @@
 
 .admin-evento-remover:hover {
   text-decoration: underline;
+}
+
+/* ---------- Lista de eventos (cada evento = capa + título + descrição + fotos) ---------- */
+.admin-eventos-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.admin-evento-item {
+  background: var(--branco);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra-card);
+  overflow: hidden;
+}
+
+.admin-evento-item.arrastando {
+  opacity: 0.4;
+}
+
+.admin-evento-item-cabecalho {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  cursor: grab;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.admin-evento-capa {
+  position: relative;
+  flex: 0 0 140px;
+  width: 140px;
+  aspect-ratio: 4 / 3;
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--verde-claro);
+  cursor: pointer;
+}
+
+.admin-evento-capa img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.admin-evento-capa-vazia {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--verde);
+  font-size: 0.72rem;
+  text-align: center;
+  padding: 8px;
+}
+
+.admin-evento-capa-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 74, 63, 0.55);
+  color: var(--branco);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.72rem;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.admin-evento-capa:hover .admin-evento-capa-overlay,
+.admin-evento-capa:focus-within .admin-evento-capa-overlay {
+  opacity: 1;
+}
+
+.admin-evento-campos {
+  flex: 1;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.admin-evento-campos label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--texto);
+}
+
+.admin-evento-campos input,
+.admin-evento-campos textarea {
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1.5px solid var(--cinza-borda);
+}
+
+.admin-evento-campos textarea {
+  resize: vertical;
+  min-height: 44px;
+}
+
+.admin-evento-item-acoes {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-end;
+}
+
+.admin-evento-toggle-fotos {
+  border: 1.5px solid var(--cinza-borda);
+  background: var(--branco);
+  border-radius: 8px;
+  padding: 7px 12px;
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--verde-escuro);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.admin-evento-toggle-fotos:hover {
+  border-color: var(--verde);
+}
+
+.admin-evento-item-remover {
+  border: none;
+  background: none;
+  color: #a3271f;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 2px 4px;
+  white-space: nowrap;
+}
+
+.admin-evento-item-remover:hover {
+  text-decoration: underline;
+}
+
+.admin-evento-item-corpo {
+  border-top: 1px solid var(--cinza-borda);
+  padding: 16px;
+  background: var(--fundo-secao);
+}
+
+.admin-evento-fotos-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
 }
 
 /* ---------- Barra de publicação ---------- */
