@@ -2346,6 +2346,16 @@ h3.pendente {
   top: 14px;
   left: 14px;
   z-index: 3;
+  background: var(--branco);
+  color: var(--verde-escuro);
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  padding: 5px 10px;
+  border-radius: 999px;
+  box-shadow: var(--sombra-card);
 }
 
 .card-cobertura h3 {

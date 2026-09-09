@@ -483,6 +483,10 @@
       img.src = foto.previewUrl;
       img.alt = "";
       thumb.appendChild(img);
+      var numeroFoto = document.createElement("span");
+      numeroFoto.className = "admin-numero-badge";
+      numeroFoto.textContent = String(indice + 1);
+      thumb.appendChild(numeroFoto);
 
       var corpo = document.createElement("div");
       corpo.className = "admin-evento-body";
@@ -563,6 +567,10 @@
         capaVazia.textContent = "Clique para escolher a capa";
         capa.appendChild(capaVazia);
       }
+      var numeroEvento = document.createElement("span");
+      numeroEvento.className = "admin-numero-badge admin-numero-badge--grande";
+      numeroEvento.textContent = String(indice + 1);
+      capa.appendChild(numeroEvento);
       var capaOverlay = document.createElement("div");
       capaOverlay.className = "admin-evento-capa-overlay";
       capaOverlay.textContent = "Trocar capa";
@@ -589,6 +597,11 @@
       // campos
       var campos = document.createElement("div");
       campos.className = "admin-evento-campos";
+
+      var ordemLabel = document.createElement("span");
+      ordemLabel.className = "admin-evento-ordem";
+      ordemLabel.textContent = "Posição " + (indice + 1) + " na Cobertura de Eventos";
+      campos.appendChild(ordemLabel);
 
       var labelTitulo = document.createElement("label");
       labelTitulo.innerHTML = "<span>Título do evento</span>";

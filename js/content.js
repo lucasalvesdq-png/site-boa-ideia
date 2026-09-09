@@ -153,6 +153,75 @@
     });
   }
 
+  // ---------- teaser de eventos na home ("Coberturas & Bastidores") ----------
+
+  function formatarDataCurta(iso) {
+    if (!iso) return "";
+    var partes = iso.split("-");
+    if (partes.length !== 3) return "";
+    var meses = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"];
+    var mes = meses[parseInt(partes[1], 10) - 1];
+    return mes ? partes[2] + " " + mes : "";
+  }
+
+  function renderCoberturasHome(eventos) {
+    if (!Array.isArray(eventos) || !eventos.length) return;
+    var grade = document.querySelector("[data-coberturas-grade]");
+    if (!grade) return;
+
+    grade.innerHTML = "";
+
+    // Mostra os primeiros eventos da lista — a ordem é a mesma definida no
+    // painel (aba Cobertura de Eventos), então basta arrastar o evento mais
+    // recente para o topo lá para ele aparecer aqui também.
+    eventos.slice(0, 3).forEach(function (evento) {
+      if (!evento || !evento.id) return;
+      var href = "evento.html?id=" + encodeURIComponent(evento.id);
+
+      var article = document.createElement("article");
+      article.className = "card-cobertura animar";
+
+      var fotoWrap = document.createElement("a");
+      fotoWrap.className = "card-cobertura-foto cantos-neon";
+      fotoWrap.href = href;
+
+      var img = document.createElement("img");
+      img.className = "img-ph";
+      img.loading = "lazy";
+      img.src = evento.capa || "";
+      img.alt = evento.titulo || "";
+      fotoWrap.appendChild(img);
+
+      var dataCurta = formatarDataCurta(evento.data);
+      if (dataCurta) {
+        var badge = document.createElement("span");
+        badge.className = "card-cobertura-data";
+        badge.textContent = dataCurta;
+        fotoWrap.appendChild(badge);
+      }
+
+      article.appendChild(fotoWrap);
+
+      var h3 = document.createElement("h3");
+      h3.textContent = evento.titulo || "Evento";
+      article.appendChild(h3);
+
+      if (evento.descricao) {
+        var p = document.createElement("p");
+        p.textContent = evento.descricao;
+        article.appendChild(p);
+      }
+
+      var link = document.createElement("a");
+      link.className = "card-foto-link";
+      link.href = href;
+      link.textContent = "Ver fotos →";
+      article.appendChild(link);
+
+      grade.appendChild(article);
+    });
+  }
+
   function buscarJson(caminho) {
     return fetch(caminho, { cache: "no-store" })
       .then(function (resposta) {
@@ -169,8 +238,13 @@
     tarefas.push(buscarJson("content/banners.json").then(renderBanners));
   }
 
-  if (document.querySelector("[data-eventos-grade]")) {
-    tarefas.push(buscarJson("content/eventos.json").then(renderEventos));
+  if (document.querySelector("[data-eventos-grade]") || document.querySelector("[data-coberturas-grade]")) {
+    tarefas.push(
+      buscarJson("content/eventos.json").then(function (eventos) {
+        renderEventos(eventos);
+        renderCoberturasHome(eventos);
+      })
+    );
   }
 
   window.__boaIdeiaContentPromise = tarefas.length
