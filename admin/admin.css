@@ -378,6 +378,7 @@
 }
 
 .admin-evento-thumb {
+  position: relative;
   aspect-ratio: 4 / 3;
   background: var(--verde-claro);
 }
@@ -419,6 +420,46 @@
 
 .admin-evento-remover:hover {
   text-decoration: underline;
+}
+
+/* Numeração — mostra a posição (1, 2, 3...) em que o evento/foto aparece
+   no site, para quem está cadastrando saber exatamente a ordem. */
+.admin-numero-badge {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  z-index: 2;
+  background: var(--verde-escuro);
+  color: var(--branco);
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  font-size: 0.72rem;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  pointer-events: none;
+}
+
+.admin-numero-badge--grande {
+  top: 8px;
+  left: 8px;
+  min-width: 26px;
+  height: 26px;
+  font-size: 0.85rem;
+  background: var(--verde);
+}
+
+.admin-evento-ordem {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--verde);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
 }
 
 /* ---------- Lista de eventos (cada evento = capa + título + descrição + fotos) ---------- */
