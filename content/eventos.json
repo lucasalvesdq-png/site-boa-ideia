@@ -566,11 +566,716 @@
   },
   {
     "id": "evento-1789737745115",
-    "titulo": "Evento 2",
-    "descricao": "",
-    "data": "",
-    "capa": "",
-    "fotos": []
+    "titulo": "Desfile 7 Setembro - 2026",
+    "descricao": "O COOPEX – Colégio Boa Ideia marcou presença no Desfile de 7 de Setembro 2026, celebrando um dos momentos mais importantes do calendário cívico brasileiro.\n\nNossos alunos participaram com entusiasmo, organização e dedicação, levando para as ruas uma apresentação marcada por civismo, cultura, educação e união.\n\nFoi um momento especial de aprendizado e integração, reforçando valores como respeito, cidadania e compromisso com a construção de um futuro melhor.\n\nParabéns aos alunos, professores, colaboradores e famílias que fizeram parte desse momento tão especial para o COOPEX – Colégio Boa Ideia!",
+    "data": "2026-09-07",
+    "capa": "assets/img/eventos/evento-1789737745115/capa.jpg",
+    "fotos": [
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751727201-0.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751730441-1.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751733707-2.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751737118-3.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751739956-4.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751742673-5.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751745674-6.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751748471-7.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751752436-8.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751756516-9.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751760722-10.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751764772-11.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751768907-12.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751773017-13.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751776709-14.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751780218-15.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751783668-16.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751787074-17.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751790259-18.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751794056-19.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751797571-20.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751800914-21.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751804640-22.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751808265-23.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751811409-24.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751814759-25.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751818409-26.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751822426-27.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751825863-28.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751829328-29.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751832556-30.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751835829-31.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751839175-32.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751842629-33.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751845921-34.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751848904-35.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751852307-36.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751855824-37.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751859216-38.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751862543-39.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751865935-40.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751869097-41.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751872508-42.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751875870-43.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751878933-44.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751882309-45.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751885862-46.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751889121-47.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751892304-48.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751895660-49.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751898902-50.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751902543-51.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751905865-52.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751909075-53.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751912446-54.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751915710-55.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751918911-56.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751922139-57.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751925390-58.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751928677-59.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751932047-60.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751935355-61.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751938636-62.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751942079-63.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751945401-64.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751948313-65.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751951343-66.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751954567-67.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751957829-68.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751961162-69.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751964620-70.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751967891-71.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751971209-72.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751974604-73.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751977965-74.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751981144-75.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751984439-76.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751987425-77.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751990273-78.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751993392-79.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751996594-80.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789751999612-81.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752002648-82.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752006034-83.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752009080-84.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752011902-85.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752014962-86.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752018427-87.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752021720-88.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752024844-89.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752027648-90.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752030983-91.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752033820-92.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752036790-93.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752039930-94.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752043064-95.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752046118-96.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752049389-97.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752052738-98.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752055875-99.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752058854-100.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752061957-101.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752065510-102.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752069027-103.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752072602-104.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752075942-105.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752078827-106.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752082074-107.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752085262-108.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752088359-109.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752091865-110.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752095188-111.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752098469-112.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752101790-113.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752104988-114.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752108392-115.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752112011-116.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752115409-117.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752120618-118.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752123952-119.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752127026-120.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752130161-121.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752133597-122.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752137216-123.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752140770-124.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752144152-125.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752147440-126.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752150964-127.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752154299-128.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752157484-129.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752160785-130.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752164002-131.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752167372-132.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752170367-133.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752173776-134.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752177126-135.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752180233-136.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752183449-137.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752186705-138.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752189875-139.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752192955-140.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752196015-141.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752199357-142.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752202164-143.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752205738-144.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752209090-145.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752212322-146.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752215441-147.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752218670-148.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752221720-149.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752225111-150.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752228566-151.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752231958-152.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752235305-153.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752238117-154.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752241208-155.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752243926-156.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752246947-157.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752250097-158.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752253057-159.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752256541-160.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752259884-161.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752263009-162.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752266224-163.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752268507-164.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752272059-165.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752275432-166.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752277520-167.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752279766-168.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752281845-169.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752284262-170.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752289504-171.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752292642-172.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752295536-173.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752298391-174.jpg",
+        "legenda": ""
+      },
+      {
+        "img": "assets/img/eventos/evento-1789737745115/1789752301299-175.jpg",
+        "legenda": ""
+      }
+    ]
   },
   {
     "id": "evento-1789737765123",
