@@ -4,7 +4,7 @@
     "titulo": "Interclasse 2026",
     "descricao": "O Interclasse 2026 do COOPEX – Colégio Boa Ideia foi marcado por muita energia, integração e espírito esportivo!\n\nDurante a competição, nossos alunos mostraram talento, dedicação, trabalho em equipe e respeito dentro e fora das quadras. Mais do que disputar resultados, o Interclasse proporcionou momentos de amizade, torcida, superação e união entre as turmas.\n\nCada partida, cada torcida e cada comemoração fizeram parte de uma experiência especial que reforça a importância do esporte na formação dos nossos estudantes.\n\nParabéns a todos os alunos, professores, equipes e colaboradores que fizeram do Interclasse 2026 um grande momento para a família COOPEX – Colégio Boa Ideia!",
     "data": "2026-09-01",
-    "capa": "",
+    "capa": "assets/img/eventos/evento-1789737127870/capa.jpg",
     "fotos": [
       {
         "img": "assets/img/eventos/evento-1789737127870/1789737290524-0.jpg",
@@ -563,5 +563,13 @@
         "legenda": ""
       }
     ]
+  },
+  {
+    "id": "evento-1789737745115",
+    "titulo": "Evento 2",
+    "descricao": "",
+    "data": "",
+    "capa": "",
+    "fotos": []
   }
 ]
