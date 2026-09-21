@@ -20,6 +20,9 @@
   "use strict";
 
   var PONTO_CORTE_MOBILE = "(max-width: 640px)";
+  // Cada publicação do painel gera um novo manifesto. O parâmetro evita que
+  // uma cópia anterior mantida na CDN seja usada ao recarregar uma página.
+  var VERSAO_CONTEUDO = Date.now();
 
   function aguardarNoMaximo(ms) {
     return new Promise(function (resolver) {
@@ -208,6 +211,10 @@
 
       if (evento.descricao) {
         var p = document.createElement("p");
+        // A descrição permanece íntegra no álbum do evento. Na home ela é
+        // limitada visualmente a três linhas por CSS, para que os cards não
+        // concorram com o conteúdo completo da cobertura.
+        p.className = "card-cobertura-resumo";
         p.textContent = evento.descricao;
         article.appendChild(p);
       }
@@ -223,7 +230,8 @@
   }
 
   function buscarJson(caminho) {
-    return fetch(caminho, { cache: "no-store" })
+    var separador = caminho.indexOf("?") === -1 ? "?" : "&";
+    return fetch(caminho + separador + "v=" + VERSAO_CONTEUDO, { cache: "no-store" })
       .then(function (resposta) {
         return resposta.ok ? resposta.json() : null;
       })

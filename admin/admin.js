@@ -18,6 +18,7 @@
   var CAPA_QUALIDADE = 0.85;
   var EVENTO_MAX_LADO = 1600;
   var EVENTO_QUALIDADE = 0.82;
+  var VERSAO_CONTEUDO = Date.now();
 
   var telaLogin = document.getElementById("tela-login");
   var telaPainel = document.getElementById("tela-painel");
@@ -264,10 +265,10 @@
 
   function carregarConteudo() {
     Promise.all([
-      fetch("/content/banners.json", { cache: "no-store" }).then(function (r) {
+      fetch("/content/banners.json?v=" + VERSAO_CONTEUDO, { cache: "no-store" }).then(function (r) {
         return r.ok ? r.json() : [];
       }),
-      fetch("/content/eventos.json", { cache: "no-store" }).then(function (r) {
+      fetch("/content/eventos.json?v=" + VERSAO_CONTEUDO, { cache: "no-store" }).then(function (r) {
         return r.ok ? r.json() : [];
       }),
     ])

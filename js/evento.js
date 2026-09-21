@@ -11,6 +11,10 @@
 (function () {
   "use strict";
 
+  // Garante que título, descrição e fotos publicados no painel sejam lidos
+  // da versão atual do manifesto, sem reaproveitar uma resposta da CDN.
+  var VERSAO_CONTEUDO = Date.now();
+
   function aguardarNoMaximo(ms) {
     return new Promise(function (resolver) {
       setTimeout(resolver, ms);
@@ -121,7 +125,7 @@
   window.__boaIdeiaContentPromise = !id
     ? (mostrarErro(), Promise.resolve())
     : Promise.race([
-        fetch("content/eventos.json", { cache: "no-store" })
+        fetch("content/eventos.json?v=" + VERSAO_CONTEUDO, { cache: "no-store" })
           .then(function (resposta) {
             return resposta.ok ? resposta.json() : [];
           })

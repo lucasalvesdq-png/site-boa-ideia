@@ -1148,16 +1148,11 @@ h3.pendente {
 }
 
 .card-video .video-capa {
-  --prop: 16 / 9;
-  border-radius: 0;
-  cursor: pointer;
-}
-
-.card-video .video-capa img {
-  position: absolute;
-  inset: 0;
+  aspect-ratio: 9 / 16;
+  display: block;
   width: 100%;
-  height: 100%;
+  background: var(--verde-escuro);
+  border-radius: 0;
   object-fit: cover;
 }
 
@@ -1221,6 +1216,25 @@ h3.pendente {
 .card-video .video-legenda span {
   font-size: 0.85rem;
   color: var(--texto-suave);
+}
+
+/* Depoimentos seguem o formato vertical de Reels, sem esticar os cards
+   em telas grandes. */
+.grid-depoimentos {
+  grid-template-columns: repeat(3, minmax(0, 320px));
+  justify-content: center;
+}
+
+@media (max-width: 980px) {
+  .grid-depoimentos {
+    grid-template-columns: repeat(2, minmax(0, 320px));
+  }
+}
+
+@media (max-width: 640px) {
+  .grid-depoimentos {
+    grid-template-columns: minmax(0, 320px);
+  }
 }
 
 /* ---------- Faixa de CTA ---------- */
@@ -2367,6 +2381,14 @@ h3.pendente {
   margin: 0 20px 1em;
   color: var(--texto-suave);
   font-size: 0.92rem;
+}
+
+.card-cobertura .card-cobertura-resumo {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
 }
 
 .card-cobertura .card-foto-link {
