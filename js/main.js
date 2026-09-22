@@ -142,12 +142,17 @@ function iniciarSiteBoaIdeia() {
     }
   });
 
-  /* Carrossel do hero — troca a cada 3 segundos */
+  /* Carrossel do hero — troca a cada 6 segundos e pausa ao passar o mouse */
   (function () {
-    var slides = document.querySelectorAll("#hero-carrossel .carrossel-slide");
-    var pontos = document.querySelectorAll("#hero-carrossel .carrossel-ponto");
+    var carrossel = document.querySelector("#hero-carrossel");
+    if (!carrossel) return;
+
+    var slides = carrossel.querySelectorAll(".carrossel-slide, .carrossel-slide-link");
+    var pontos = carrossel.querySelectorAll(".carrossel-ponto");
     if (!slides.length) return;
     var atual = 0;
+    var intervalo;
+
     function irPara(n) {
       slides[atual].classList.remove("ativo");
       pontos[atual].classList.remove("ativo");
@@ -155,7 +160,18 @@ function iniciarSiteBoaIdeia() {
       slides[atual].classList.add("ativo");
       pontos[atual].classList.add("ativo");
     }
-    setInterval(function () { irPara(atual + 1); }, 3000);
+
+    function iniciarRotacao() {
+      intervalo = window.setInterval(function () { irPara(atual + 1); }, 6000);
+    }
+
+    function pausarRotacao() {
+      window.clearInterval(intervalo);
+    }
+
+    iniciarRotacao();
+    carrossel.addEventListener("mouseenter", pausarRotacao);
+    carrossel.addEventListener("mouseleave", iniciarRotacao);
   })();
 
   /* Indicador de scroll no banner cheio — desce para a seção seguinte */
