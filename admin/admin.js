@@ -772,6 +772,11 @@
     });
     var enviados = 0;
 
+    // Guardados para, depois de publicar, conferir se o site já republicou
+    // com exatamente este conteúdo (ver confirmarPublicacao).
+    var manifestoBannersEnviado = null;
+    var manifestoEventosEnviado = null;
+
     function atualizarProgresso() {
       publicarStatus.textContent = totalEnvios > 0
         ? "Publicando imagens... (" + enviados + "/" + totalEnvios + ")"
@@ -859,19 +864,19 @@
     cadeia = cadeia
       .then(function () {
         publicarStatus.textContent = "Salvando lista de banners...";
-        var manifestoBanners = estado.banners.map(function (b) {
+        manifestoBannersEnviado = estado.banners.map(function (b) {
           return { desktop: b.desktop, mobile: b.mobile, alt: b.alt, link: b.link || "" };
         });
         return chamarApi("/api/publish", {
           method: "POST",
-          body: JSON.stringify({ manifestType: "banners", manifest: manifestoBanners }),
+          body: JSON.stringify({ manifestType: "banners", manifest: manifestoBannersEnviado }),
         }).then(function (resp) {
           if (!resp.ok || !resp.dados.ok) throw new Error((resp.dados && resp.dados.error) || "Falha ao salvar banners.");
         });
       })
       .then(function () {
         publicarStatus.textContent = "Salvando eventos...";
-        var manifestoEventos = estado.eventos.map(function (e) {
+        manifestoEventosEnviado = estado.eventos.map(function (e) {
           return {
             id: e.id,
             titulo: e.titulo,
@@ -885,7 +890,7 @@
         });
         return chamarApi("/api/publish", {
           method: "POST",
-          body: JSON.stringify({ manifestType: "eventos", manifest: manifestoEventos }),
+          body: JSON.stringify({ manifestType: "eventos", manifest: manifestoEventosEnviado }),
         }).then(function (resp) {
           if (!resp.ok || !resp.dados.ok) throw new Error((resp.dados && resp.dados.error) || "Falha ao salvar os eventos.");
         });
@@ -894,9 +899,10 @@
     cadeia
       .then(function () {
         limparSujo();
-        mostrarToast("Publicado! O site atualiza em alguns segundos.", "sucesso");
         renderBanners();
         renderEventos();
+        mostrarToast("Publicado! O site está sendo republicado — pode levar até 1 minuto. Aguarde a confirmação antes de atualizar a página.", "sucesso");
+        confirmarPublicacao(manifestoBannersEnviado, manifestoEventosEnviado);
       })
       .catch(function (erro) {
         mostrarToast(erro.message || "Falha ao publicar.", "erro");
@@ -906,6 +912,63 @@
         btnPublicar.disabled = false;
         btnDescartar.disabled = false;
       });
+  }
+
+  // Depois de publicar, a Vercel leva ~30-60s para republicar o site com os
+  // novos arquivos. Até lá, o conteúdo ao vivo ainda é o antigo — é isso que
+  // faz parecer, ao recarregar logo em seguida, que "não salvou" ou "não
+  // excluiu". Aqui a gente busca os manifestos ao vivo repetidamente e só
+  // avisa "pronto" quando o site realmente já está servindo o que foi
+  // publicado (ou avisa, sem assustar, se demorar mais que o esperado).
+  function confirmarPublicacao(bannersEsperado, eventosEsperado) {
+    var INTERVALO = 4000;
+    var MAX_TENTATIVAS = 30; // ~2 minutos de margem
+    var tentativas = 0;
+
+    function jaBate(url, esperado) {
+      if (!esperado) return Promise.resolve(true);
+      return fetch(url + "?v=" + Date.now(), { cache: "no-store" })
+        .then(function (r) {
+          return r.ok ? r.json() : null;
+        })
+        .then(function (dados) {
+          if (!dados) return false;
+          try {
+            return JSON.stringify(dados) === JSON.stringify(esperado);
+          } catch (e) {
+            return false;
+          }
+        })
+        .catch(function () {
+          return false;
+        });
+    }
+
+    function tentar() {
+      // Se a pessoa já começou outra edição, para de conferir em silêncio.
+      if (estado.sujo) return;
+      tentativas++;
+      Promise.all([
+        jaBate("/content/banners.json", bannersEsperado),
+        jaBate("/content/eventos.json", eventosEsperado),
+      ])
+        .then(function (res) {
+          if (res[0] && res[1]) {
+            mostrarToast("Pronto! O site já está atualizado. Pode recarregar a página.", "sucesso");
+            return;
+          }
+          if (tentativas >= MAX_TENTATIVAS) {
+            mostrarToast("Publicado com sucesso. Se a mudança ainda não aparecer, recarregue a página daqui a 1 minuto.", "sucesso");
+            return;
+          }
+          setTimeout(tentar, INTERVALO);
+        })
+        .catch(function () {
+          if (tentativas < MAX_TENTATIVAS) setTimeout(tentar, INTERVALO);
+        });
+    }
+
+    setTimeout(tentar, INTERVALO);
   }
 
   btnPublicar.addEventListener("click", publicar);
