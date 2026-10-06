@@ -217,7 +217,7 @@ Handler novo `carrossel()`:
 ```html
 <section class="secao carrossel-secao">
   <div class="container">
-    <div class="secao-cabecalho"><span class="eyebrow">Nossa casa</span><h2>O Boa Ideia por dentro</h2></div>
+    <div class="secao-cabecalho"><span class="eyebrow">Nossa casa</span><h2>A Boa Ideia por dentro</h2></div>
     <div class="carrossel" data-carrossel>
       <button class="carrossel-btn carrossel-btn--prev" data-carrossel-prev aria-label="Anterior">‹</button>
       <div class="carrossel-trilho">
