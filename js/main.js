@@ -91,11 +91,6 @@ function iniciarSiteBoaIdeia() {
   ativarAbaPorHash();
   window.addEventListener("hashchange", ativarAbaPorHash);
 
-<<<<<<< HEAD
-  /* Carrossel "O Boa Ideia por dentro" — snap-scroll com setas e dots */
-=======
-  /* Carrossel "A Boa Ideia por dentro" — snap-scroll com setas e dots */
->>>>>>> 8eeece4 (refactor: replace 'o Coopex' and 'o Boa Ideia' with 'a Boa Ideia' throughout project)
   document.querySelectorAll("[data-carrossel]").forEach(function (carrossel) {
     var trilho = carrossel.querySelector(".carrossel-trilho");
     var prev = carrossel.querySelector("[data-carrossel-prev]");

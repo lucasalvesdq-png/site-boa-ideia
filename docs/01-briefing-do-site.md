@@ -1,24 +1,3 @@
-<<<<<<< HEAD
-# Briefing do site — Coopex Colégio Boa Ideia
-
-## Objetivo
-
-Site institucional para apresentar o Coopex Colégio Boa Ideia, gerar reconhecimento de marca e, futuramente, direcionar para matrículas (link ainda pendente de confirmação do destino — pode ser um portal externo ou formulário próprio).
-
-## Quem é o colégio
-
-- **Nome**: Coopex Colégio Boa Ideia
-=======
-# Briefing do site — Coopex Colégia Boa Ideia
-
-## Objetivo
-
-Site institucional para apresentar a Boa Ideia, gerar reconhecimento de marca e, futuramente, direcionar para matrículas (link ainda pendente de confirmação do destino — pode ser um portal externo ou formulário próprio).
-
-## Quem é o colégio
-
-- **Nome**: Coopex Colégia Boa Ideia
->>>>>>> 8eeece4 (refactor: replace 'o Coopex' and 'o Boa Ideia' with 'a Boa Ideia' throughout project)
 - **Mantenedora**: COOPEX (cooperativa)
 - **Localização**: R. da Concórdia, 114 — Gen. Dutra, Paulo Afonso — BA, 48607-240
 - **Instagram**: [@colegioboaideia](https://www.instagram.com/colegioboaideia)
@@ -61,11 +40,6 @@ Produzida pela agência **PRATEN** (ver `MATERIAS DA MARCA/APRESENTAÇÃO /IDENT
 | Página | Arquivo | Conteúdo |
 |---|---|---|
 | Início | `index.html` | Hero, prévia de Níveis de Ensino, prévia de Saiba Mais, Depoimentos, faixa institucional |
-<<<<<<< HEAD
-| Quem Somos | `quem-somos.html` | Abas: Conheça o Boa Ideia, Missão/Visão/Valores, Nossa Estrutura, Nossa Equipe |
-=======
-| Quem Somos | `quem-somos.html` | Abas: Conheça a Boa Ideia, Missão/Visão/Valores, Nossa Estrutura, Nossa Equipe |
->>>>>>> 8eeece4 (refactor: replace 'o Coopex' and 'o Boa Ideia' with 'a Boa Ideia' throughout project)
 | Níveis de Ensino | `niveis-de-ensino.html` | Detalhe dos 4 níveis |
 | Saiba Mais | `saiba-mais.html` | Projetos pedagógicos, Programa Bilíngue, Cobertura de Eventos |
 | Portal Educacional | `portal-educacional.html` | Portal do Aluno, Portal do Professor |
@@ -77,11 +51,6 @@ Todas as páginas compartilham o mesmo header, nav, footer e a mesma folha de es
 
 Estes pontos aparecem marcados como `.pendente` no site e bloqueiam a versão final do conteúdo:
 
-<<<<<<< HEAD
-- Texto de apresentação institucional ("Conheça o Boa Ideia")
-=======
-- Texto de apresentação institucional ("Conheça a Boa Ideia")
->>>>>>> 8eeece4 (refactor: replace 'o Coopex' and 'o Boa Ideia' with 'a Boa Ideia' throughout project)
 - Fotos e descrição da estrutura física (Nossa Estrutura)
 - Informações/fotos da equipe (Nossa Equipe)
 - Descrição detalhada do Programa Bilíngue
