@@ -1,7 +1,7 @@
 {
   "name": "site-boa-ideia",
   "private": true,
-  "description": "Site institucional do Coopex Colégio Boa Ideia — HTML/CSS/JS estático, com painel /admin (Vercel Functions) para gerenciar banners e a galeria de Cobertura de Eventos.",
+  "description": "Site institucional da Boa Ideia — HTML/CSS/JS estático, com painel /admin (Vercel Functions) para gerenciar banners e a galeria de Cobertura de Eventos.",
   "engines": {
     "node": "22.x"
   }

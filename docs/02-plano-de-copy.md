@@ -40,7 +40,6 @@ Mapeamento do que cada página precisa dizer (estrutura, não o texto final):
 | Página | Seções | Copy já real | Copy ainda pendente |
 |---|---|---|---|
 | Início | Hero, prévia Níveis, prévia Saiba Mais, Depoimentos, Faixa institucional | Slogan, hashtag | Textos de apoio do hero (subtítulo?), prévias mais descritivas |
-| Quem Somos | Conheça o Boa Ideia, Missão/Visão/Valores, Nossa Estrutura, Nossa Equipe | Missão/Visão/Valores | Texto institucional, estrutura, equipe |
 | Níveis de Ensino | 4 níveis detalhados | Nomes dos níveis | Descrição de cada nível (faixa etária, diferenciais) |
 | Saiba Mais | Projetos pedagógicos, Programa Bilíngue, Cobertura de Eventos | Lista de projetos (SAS Enem etc.) | Descrição do Bilíngue e da Cobertura de Eventos |
 | Portal Educacional | Portal do Aluno, Portal do Professor | — | Todo o conteúdo/descrição de acesso |
@@ -50,7 +49,6 @@ Mapeamento do que cada página precisa dizer (estrutura, não o texto final):
 
 - Frases curtas e diretas nos títulos (`h1`/`h2`); parágrafos de apoio com no máximo 2–3 frases (padrão já usado nos cards existentes).
 - CTAs no imperativo e específicos ("Fale conosco", não "Clique aqui").
-- Sempre grafar o nome completo "Coopex Colégio Boa Ideia" na primeira menção de cada página; pode abreviar para "Boa Ideia" nas menções seguintes.
 - Não inventar números/estatísticas (ex.: "X anos de tradição", "X% de aprovação") sem confirmação do colégio — preferir deixar como `.pendente` a inventar dado.
 - Seguir o padrão já usado nos blocos "Pendente": explicar objetivamente o que falta, sem soar como erro do site.
 

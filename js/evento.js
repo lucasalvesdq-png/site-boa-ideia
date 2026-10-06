@@ -39,7 +39,6 @@
     var cabecalho = document.querySelector("[data-evento-cabecalho]");
     if (erro) erro.hidden = false;
     if (cabecalho) cabecalho.hidden = true;
-    document.title = "Evento não encontrado — Coopex Colégio Boa Ideia";
     var h1 = document.querySelector("[data-evento-titulo]");
     if (h1) h1.textContent = "Evento não encontrado";
   }
@@ -50,7 +49,6 @@
       return;
     }
 
-    document.title = (evento.titulo || "Evento") + " — Coopex Colégio Boa Ideia";
 
     var h1 = document.querySelector("[data-evento-titulo]");
     if (h1) h1.textContent = evento.titulo || "Evento";

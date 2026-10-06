@@ -47,7 +47,6 @@ Substituir o hero atual (placeholder + gradiente + título/CTA sobre a arte) por
 ### HTML
 ```html
 <section class="hero-banner">
-  <img src="assets/img/banner-home.png" alt="Coopex Colégio Boa Ideia — Você na nossa história" />
 </section>
 <section class="hero-acoes-faixa">
   <div class="container">
@@ -138,7 +137,6 @@ Substitui o uso de `.grid-cards` + `.card` só para essa seção. Classes novas:
 
 ---
 
-## §7. "Vem conhecer o Boa Ideia de perto" — reformulada
 
 ### Escopo
 Transformar a faixa CTA fria em bloco split com identidade visual forte.
@@ -146,7 +144,6 @@ Transformar a faixa CTA fria em bloco split com identidade visual forte.
 ### Layout
 - Fundo `var(--verde)` full-width, padding 96px 0.
 - **Esquerda (50%)**: `.moldura-janela` com foto real do colégio + `.selo-flutuante` N1 sobreposto no canto superior direito, decorações `estrelas` + `confete`.
-- **Direita (50%)**: eyebrow "Vem viver um dia com a gente" (neon), H2 grande "Conheça o Boa Ideia por dentro", parágrafo curto, 2 CTAs (`Agendar visita` primário branco / `Falar no WhatsApp` linha neon), e lista `<ul class="beneficios-visita">` com 3 itens (ícone SVG + texto):
   - ⏱ Visita de ~1h
   - 👥 Tour com a coordenação
   - 📅 Agenda flexível (manhã ou tarde)
@@ -158,7 +155,6 @@ Transformar a faixa CTA fria em bloco split com identidade visual forte.
 
 ### Copy (rascunho — cliente pode ajustar)
 > **Vem viver um dia com a gente**
-> Conheça o Boa Ideia por dentro
 > Aula-visita, tour pela estrutura e uma conversa com a coordenação — sem compromisso. É a melhor forma de sentir como é estudar aqui.
 
 ---
@@ -196,14 +192,12 @@ Bloco novo entre "Saiba Mais" e "Depoimentos" mostrando 3 coberturas recentes.
 
 ---
 
-## §6. Carrossel "O Boa Ideia por dentro"
 
 ### Escopo
 Carrossel horizontal com 6-8 fotos do colégio, formato retrato, snap-scroll, sem lib externa.
 
 ### Layout
 - Seção nova antes do CTA final ("Faixa institucional").
-- Cabeçalho: eyebrow "Nossa casa" · H2 "O Boa Ideia por dentro".
 - Trilho: `overflow-x: auto; scroll-snap-type: x mandatory;` — cada slide `flex: 0 0 clamp(240px, 28vw, 320px)`, `aspect-ratio: 3/4`, com `.cantos-neon`.
 - Controles: setas circulares neon (esq/dir), ficam sobre o trilho; dots abaixo.
 - Auto-play **desligado**. `prefers-reduced-motion` esconde setas e mantém só scroll manual.
@@ -217,7 +211,6 @@ Handler novo `carrossel()`:
 ```html
 <section class="secao carrossel-secao">
   <div class="container">
-    <div class="secao-cabecalho"><span class="eyebrow">Nossa casa</span><h2>A Boa Ideia por dentro</h2></div>
     <div class="carrossel" data-carrossel>
       <button class="carrossel-btn carrossel-btn--prev" data-carrossel-prev aria-label="Anterior">‹</button>
       <div class="carrossel-trilho">

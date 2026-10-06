@@ -2,19 +2,16 @@
   {
     "desktop": "assets/img/banner-1-desktop.png",
     "mobile": "assets/img/banner-1-mobile.png",
-    "alt": "Você na nossa história — Coopex Colégio Boa Ideia",
     "link": ""
   },
   {
     "desktop": "assets/img/banner-2-desktop.png",
     "mobile": "assets/img/banner-2-mobile.png",
-    "alt": "Sua história de sucesso começa aqui — Coopex Colégio Boa Ideia",
     "link": ""
   },
   {
     "desktop": "assets/img/banner-3-desktop.png",
     "mobile": "assets/img/banner-3-mobile.png",
-    "alt": "Matrículas abertas — Coopex Colégio Boa Ideia",
     "link": ""
   }
 ]

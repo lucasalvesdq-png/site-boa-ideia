@@ -29,7 +29,6 @@ Legenda: `[ ]` pendente · `[~]` em andamento · `[x]` concluído · `[!]` bloqu
 - [ ] **T3.1** — Substituir `.grid-cards` da seção Saiba Mais na home por `.grid-saiba-mais` + `.card-saiba` (6 cards).
 - [ ] **T3.2** — Aplicar mesmo padrão em `saiba-mais.html` (lista principal).
 - [ ] **T3.3** — CSS de `.grid-saiba-mais`, `.card-saiba`, `.card-saiba-icone`, `.card-saiba-link`.
-- [ ] **T3.4** — Substituir `.faixa-cta` "Vem conhecer o Boa Ideia" da home por seção `.venha-visitar` (split com `.moldura-janela` + `.beneficios-visita`).
 - [ ] **T3.5** — CSS de `.venha-visitar`, `.beneficios-visita`, ícones SVG inline.
 - [ ] **T3.6** — Marcar foto e selo com `.pendente` até chegar arquivo real; CTA WhatsApp fica `.pendente` até o número chegar.
 

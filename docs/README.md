@@ -1,6 +1,5 @@
 # Documentação do projeto — Site Boa Ideia
 
-Esta pasta reúne os documentos de referência para manter consistência entre todas as páginas do site do Coopex Colégio Boa Ideia — tanto no **tom de voz/conteúdo** quanto nos **componentes visuais (HTML/CSS)**.
 
 ## Documentos
 
