@@ -2,16 +2,31 @@
   {
     "desktop": "assets/img/banner-1-desktop.png",
     "mobile": "assets/img/banner-1-mobile.png",
+<<<<<<< HEAD
+    "alt": "Você na nossa história — Coopex Colégio Boa Ideia",
+=======
+    "alt": "Você na nossa história — Coopex Colégia Boa Ideia",
+>>>>>>> 8eeece4 (refactor: replace 'o Coopex' and 'o Boa Ideia' with 'a Boa Ideia' throughout project)
     "link": ""
   },
   {
     "desktop": "assets/img/banner-2-desktop.png",
     "mobile": "assets/img/banner-2-mobile.png",
+<<<<<<< HEAD
+    "alt": "Sua história de sucesso começa aqui — Coopex Colégio Boa Ideia",
+=======
+    "alt": "Sua história de sucesso começa aqui — Coopex Colégia Boa Ideia",
+>>>>>>> 8eeece4 (refactor: replace 'o Coopex' and 'o Boa Ideia' with 'a Boa Ideia' throughout project)
     "link": ""
   },
   {
     "desktop": "assets/img/banner-3-desktop.png",
     "mobile": "assets/img/banner-3-mobile.png",
+<<<<<<< HEAD
+    "alt": "Matrículas abertas — Coopex Colégio Boa Ideia",
+=======
+    "alt": "Matrículas abertas — Coopex Colégia Boa Ideia",
+>>>>>>> 8eeece4 (refactor: replace 'o Coopex' and 'o Boa Ideia' with 'a Boa Ideia' throughout project)
     "link": ""
   }
 ]

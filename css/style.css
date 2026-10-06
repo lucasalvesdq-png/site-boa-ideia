@@ -1,4 +1,9 @@
 /* ==========================================================================
+<<<<<<< HEAD
+   Coopex Colégio Boa Ideia — estilos base
+=======
+   Coopex Colégia Boa Ideia — estilos base
+>>>>>>> 8eeece4 (refactor: replace 'o Coopex' and 'o Boa Ideia' with 'a Boa Ideia' throughout project)
    Paleta e fontes conforme MATERIAS DA MARCA/ (identidade oficial do colégio)
    Reestruturação 2026-08-21 — plano aprovado (ver reestruturacao-boa-ideia.html)
    ========================================================================== */
@@ -2502,6 +2507,11 @@ h3.pendente {
   }
 }
 
+<<<<<<< HEAD
+/* ---------- §6 Carrossel "O Boa Ideia por dentro" ---------- */
+=======
+/* ---------- §6 Carrossel "A Boa Ideia por dentro" ---------- */
+>>>>>>> 8eeece4 (refactor: replace 'o Coopex' and 'o Boa Ideia' with 'a Boa Ideia' throughout project)
 
 .carrossel-secao {
   overflow: visible;

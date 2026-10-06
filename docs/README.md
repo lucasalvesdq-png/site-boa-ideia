@@ -1,5 +1,10 @@
 # Documentação do projeto — Site Boa Ideia
 
+<<<<<<< HEAD
+Esta pasta reúne os documentos de referência para manter consistência entre todas as páginas do site do Coopex Colégio Boa Ideia — tanto no **tom de voz/conteúdo** quanto nos **componentes visuais (HTML/CSS)**.
+=======
+Esta pasta reúne os documentos de referência para manter consistência entre todas as páginas do site da Boa Ideia — tanto no **tom de voz/conteúdo** quanto nos **componentes visuais (HTML/CSS)**.
+>>>>>>> 8eeece4 (refactor: replace 'o Coopex' and 'o Boa Ideia' with 'a Boa Ideia' throughout project)
 
 ## Documentos
 

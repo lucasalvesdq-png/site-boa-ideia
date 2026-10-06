@@ -39,6 +39,11 @@
     var cabecalho = document.querySelector("[data-evento-cabecalho]");
     if (erro) erro.hidden = false;
     if (cabecalho) cabecalho.hidden = true;
+<<<<<<< HEAD
+    document.title = "Evento não encontrado — Coopex Colégio Boa Ideia";
+=======
+    document.title = "Evento não encontrado — Coopex Colégia Boa Ideia";
+>>>>>>> 8eeece4 (refactor: replace 'o Coopex' and 'o Boa Ideia' with 'a Boa Ideia' throughout project)
     var h1 = document.querySelector("[data-evento-titulo]");
     if (h1) h1.textContent = "Evento não encontrado";
   }
@@ -49,6 +54,11 @@
       return;
     }
 
+<<<<<<< HEAD
+    document.title = (evento.titulo || "Evento") + " — Coopex Colégio Boa Ideia";
+=======
+    document.title = (evento.titulo || "Evento") + " — Coopex Colégia Boa Ideia";
+>>>>>>> 8eeece4 (refactor: replace 'o Coopex' and 'o Boa Ideia' with 'a Boa Ideia' throughout project)
 
     var h1 = document.querySelector("[data-evento-titulo]");
     if (h1) h1.textContent = evento.titulo || "Evento";
