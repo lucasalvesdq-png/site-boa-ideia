@@ -91,7 +91,7 @@ function iniciarSiteBoaIdeia() {
   ativarAbaPorHash();
   window.addEventListener("hashchange", ativarAbaPorHash);
 
-  /* Carrossel "O Boa Ideia por dentro" — snap-scroll com setas e dots */
+  /* Carrossel "A Boa Ideia por dentro" — snap-scroll com setas e dots */
   document.querySelectorAll("[data-carrossel]").forEach(function (carrossel) {
     var trilho = carrossel.querySelector(".carrossel-trilho");
     var prev = carrossel.querySelector("[data-carrossel-prev]");
