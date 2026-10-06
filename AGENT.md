@@ -4,11 +4,7 @@ Este arquivo fornece orientação para agentes de IA (Claude Code, e outros) ao 
 
 ## O que é este projeto
 
-<<<<<<< HEAD
 Site institucional estático do **Coopex Colégio Boa Ideia**, escola em Paulo Afonso, BA. HTML/CSS/JS puro — sem framework, sem build, sem gerenciador de pacotes, sem testes.
-=======
-Site institucional estático do **Coopex Colégia Boa Ideia**, escola em Paulo Afonso, BA. HTML/CSS/JS puro — sem framework, sem build, sem gerenciador de pacotes, sem testes.
->>>>>>> 8eeece4 (refactor: replace 'o Coopex' and 'o Boa Ideia' with 'a Boa Ideia' throughout project)
 
 Páginas (todas na raiz do repositório): `index.html`, `quem-somos.html`, `niveis-de-ensino.html`, `saiba-mais.html`, `portal-educacional.html`, `contato.html`.
 
