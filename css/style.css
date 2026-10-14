@@ -1953,8 +1953,36 @@ h3.pendente {
   background: rgba(255, 255, 255, 0.45);
   border: 1.5px solid rgba(255, 255, 255, 0.7);
   transition: background 0.3s, transform 0.3s;
-  cursor: default;
+  cursor: pointer;
+  padding: 0;
 }
+
+.hero-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 4;
+  background: rgba(0, 0, 0, 0.35);
+  color: var(--branco);
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.hero-nav:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-nav--prev { left: 16px; }
+.hero-nav--next { right: 16px; }
 
 .carrossel-ponto.ativo {
   background: var(--branco);

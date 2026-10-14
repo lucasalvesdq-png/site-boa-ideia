@@ -169,6 +169,19 @@ function iniciarSiteBoaIdeia() {
       window.clearInterval(intervalo);
     }
 
+    pontos.forEach(function (ponto, i) {
+      ponto.addEventListener("click", function () {
+        pausarRotacao();
+        irPara(i);
+        iniciarRotacao();
+      });
+    });
+
+    var btnPrev = document.getElementById("hero-prev");
+    var btnNext = document.getElementById("hero-next");
+    if (btnPrev) btnPrev.addEventListener("click", function () { pausarRotacao(); irPara(atual - 1); iniciarRotacao(); });
+    if (btnNext) btnNext.addEventListener("click", function () { pausarRotacao(); irPara(atual + 1); iniciarRotacao(); });
+
     iniciarRotacao();
     carrossel.addEventListener("mouseenter", pausarRotacao);
     carrossel.addEventListener("mouseleave", iniciarRotacao);
