@@ -1,0 +1,22 @@
+# api/.htaccess — protege o que não deve ser acessado pelo navegador.
+#
+# Os endpoints do painel são api/session.php, api/login.php, api/logout.php e
+# api/publish.php (o .htaccess da raiz aceita /api/login e reescreve para
+# /api/login.php). Tudo mais aqui dentro é interno.
+
+# Configuração com os segredos: bloqueada.
+<Files "config.php">
+    Require all denied
+</Files>
+<Files "config.example.php">
+    Require all denied
+</Files>
+
+# Sobras da versão Vercel (Node), caso ainda estejam na pasta: nunca servir
+# o código-fonte como texto.
+<FilesMatch "\.(js|json|md)$">
+    Require all denied
+</FilesMatch>
+
+# Nada de listagem de pasta.
+Options -Indexes

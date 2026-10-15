@@ -1,0 +1,79 @@
+# .htaccess — configuração do site na HostGator (Apache 2.4 + cPanel).
+# Vai na raiz do public_html, junto com index.html.
+#
+# Faz quatro coisas: 1) rotas do painel /admin e da /api, 2) impede que o
+# navegador guarde em cache os arquivos de conteúdo (banners/eventos), para a
+# troca pelo painel aparecer na hora, 3) cache longo e compressão para os
+# arquivos estáticos, 4) esconde arquivos internos do projeto.
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # ---- HTTPS -------------------------------------------------------------
+    # Descomente as 2 linhas abaixo DEPOIS de confirmar que o certificado SSL
+    # da HostGator já está ativo no domínio (cPanel > SSL/TLS Status). Se
+    # ativar antes, o site fica inacessível.
+    # RewriteCond %{HTTPS} !=on
+    # RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+    # ---- API do painel -----------------------------------------------------
+    # O painel chama /api/session, /api/login, /api/logout e /api/publish
+    # (sem extensão, como era na Vercel). Aqui cada uma vira o .php
+    # correspondente, então admin/admin.js não precisa de alteração.
+    RewriteRule ^api/(session|login|logout|publish)/?$ api/$1.php [L]
+
+    # ---- Painel ------------------------------------------------------------
+    # /admin (sem barra final) abre o painel.
+    RewriteRule ^admin/?$ admin/index.html [L]
+</IfModule>
+
+# ---- Conteúdo editável pelo painel -----------------------------------------
+# banners.json e eventos.json mudam a cada publicação: nunca podem vir do
+# cache do navegador. (Equivalente ao header no-store que estava no vercel.json.)
+<IfModule mod_headers.c>
+    <FilesMatch "^(banners|eventos)\.json$">
+        Header set Cache-Control "no-store, max-age=0, must-revalidate"
+        Header unset ETag
+    </FilesMatch>
+</IfModule>
+
+# ---- Cache dos arquivos estáticos ------------------------------------------
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/html                 "access plus 0 seconds"
+    ExpiresByType text/css                  "access plus 1 week"
+    ExpiresByType application/javascript    "access plus 1 week"
+    ExpiresByType image/jpeg                "access plus 1 month"
+    ExpiresByType image/png                 "access plus 1 month"
+    ExpiresByType image/webp                "access plus 1 month"
+    ExpiresByType image/svg+xml             "access plus 1 month"
+    ExpiresByType image/x-icon              "access plus 1 month"
+    ExpiresByType video/mp4                 "access plus 1 month"
+    ExpiresByType font/woff2                "access plus 1 year"
+    ExpiresByType font/woff                 "access plus 1 year"
+    ExpiresByType font/ttf                  "access plus 1 year"
+</IfModule>
+
+# ---- Compressão ------------------------------------------------------------
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml
+    AddOutputFilterByType DEFLATE application/javascript application/json
+    AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# ---- MIME types ------------------------------------------------------------
+<IfModule mod_mime.c>
+    AddType font/woff2 .woff2
+    AddType font/woff .woff
+    AddType image/webp .webp
+    AddType video/mp4 .mp4
+</IfModule>
+
+# ---- Arquivos internos do projeto ------------------------------------------
+# Se algum deles for enviado por engano, não fica acessível pela web.
+<FilesMatch "^(AGENT\.md|CLAUDE\.md|package\.json|vercel\.json|\.env.*|\.gitignore)$">
+    Require all denied
+</FilesMatch>
+
+Options -Indexes
+DirectoryIndex index.html index.php

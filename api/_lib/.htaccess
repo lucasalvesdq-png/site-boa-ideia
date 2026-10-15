@@ -1,0 +1,4 @@
+# api/_lib/.htaccess — nada aqui é endpoint; é código interno incluído pelos
+# arquivos de api/. Bloqueia acesso direto pelo navegador.
+Require all denied
+Options -Indexes

@@ -2,3 +2,5 @@
 Thumbs.db
 .vercel
 .env*
+api/config.php
+.deploy/
