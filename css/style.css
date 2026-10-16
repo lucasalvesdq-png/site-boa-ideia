@@ -1897,6 +1897,7 @@ h3.pendente {
   overflow: hidden;
   height: 100vh;
   min-height: 480px;
+  max-height: 56.25vw; /* impede corte lateral em monitores 4:3/5:4 — mantém proporção 16:9 */
   line-height: 0;
 }
 
