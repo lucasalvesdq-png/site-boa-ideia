@@ -4,7 +4,7 @@
     {
       "name": "site-static",
       "runtimeExecutable": "npx",
-      "runtimeArgs": ["serve", "-l", "4173", "/Users/macbookpro/Documents/Projetos/Boa Ideia - Site"],
+      "runtimeArgs": ["serve", "-l", "4173", "/Users/lucasalves/Documents/Projetos/Site Boa Ideia"],
       "port": 4173
     }
   ]

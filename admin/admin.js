@@ -13,11 +13,19 @@
 (function () {
   "use strict";
 
-  var BANNER_MAX_LADO = 1920;
-  var CAPA_MAX_LADO = 1600;
-  var CAPA_QUALIDADE = 0.85;
-  var EVENTO_MAX_LADO = 1600;
-  var EVENTO_QUALIDADE = 0.82;
+  // Os banners do hero ocupam a tela inteira (100vw) e as fotos de evento vão
+  // para o lightbox em tela cheia — em qualquer notebook/celular com tela
+  // retina (densidade de pixels 2x ou 3x), um lado máximo de 1920/1600px fica
+  // visivelmente borrado, porque o navegador precisa ampliar a imagem para
+  // preencher a tela. Os valores abaixo dão margem para essas telas sem
+  // estourar o limite de upload do servidor (3MB por imagem, ver
+  // api/publish.php).
+  var BANNER_MAX_LADO = 2560;
+  var BANNER_QUALIDADE = 0.9;
+  var CAPA_MAX_LADO = 2200;
+  var CAPA_QUALIDADE = 0.88;
+  var EVENTO_MAX_LADO = 2200;
+  var EVENTO_QUALIDADE = 0.86;
   var VERSAO_CONTEUDO = Date.now();
 
   var telaLogin = document.getElementById("tela-login");
@@ -124,6 +132,11 @@
       canvas.width = largura;
       canvas.height = altura;
       var ctx = canvas.getContext("2d");
+      // Sem isto, alguns navegadores usam suavização "low" ao reduzir a
+      // imagem, o que borra fotos ainda mais do que o redimensionamento já
+      // borraria sozinho.
+      ctx.imageSmoothingEnabled = true;
+      ctx.imageSmoothingQuality = "high";
       ctx.drawImage(img, 0, 0, largura, altura);
       return new Promise(function (resolve, reject) {
         canvas.toBlob(
@@ -808,10 +821,10 @@
       if (banner.desktopBlobPendente) {
         cadeia = cadeia
           .then(function () {
-            return otimizarImagem(banner.desktopBlobPendente, BANNER_MAX_LADO, "image/png");
+            return otimizarImagem(banner.desktopBlobPendente, BANNER_MAX_LADO, "image/jpeg", BANNER_QUALIDADE);
           })
           .then(function (blob) {
-            var caminho = "assets/img/banner-" + (indice + 1) + "-desktop.png";
+            var caminho = "assets/img/banner-" + (indice + 1) + "-desktop.jpg";
             return enviarArquivo(caminho, blob).then(function () {
               banner.desktop = caminho;
               banner.desktopBlobPendente = null;
@@ -824,10 +837,10 @@
       if (banner.mobileBlobPendente) {
         cadeia = cadeia
           .then(function () {
-            return otimizarImagem(banner.mobileBlobPendente, BANNER_MAX_LADO, "image/png");
+            return otimizarImagem(banner.mobileBlobPendente, BANNER_MAX_LADO, "image/jpeg", BANNER_QUALIDADE);
           })
           .then(function (blob) {
-            var caminho = "assets/img/banner-" + (indice + 1) + "-mobile.png";
+            var caminho = "assets/img/banner-" + (indice + 1) + "-mobile.jpg";
             return enviarArquivo(caminho, blob).then(function () {
               banner.mobile = caminho;
               banner.mobileBlobPendente = null;
