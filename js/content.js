@@ -40,7 +40,7 @@
 
     var mql = window.matchMedia ? window.matchMedia(PONTO_CORTE_MOBILE) : null;
 
-    // Os arquivos de banner têm nome fixo (banner-1-desktop.png, etc.) e o
+    // Os arquivos de banner têm nome fixo (banner-1-desktop.jpg, etc.) e o
     // painel os sobrescreve no mesmo caminho. Como o .htaccess guarda imagens
     // em cache por 1 mês, sem isto o navegador continuaria mostrando a versão
     // antiga mesmo depois de trocada. O painel grava um `v` (carimbo da última
@@ -68,6 +68,16 @@
 
         var img = document.createElement("img");
         img.alt = banner.alt || "";
+        // O primeiro banner é a imagem mais importante da página (LCP):
+        // carrega na hora e com prioridade alta. Os demais só carregam
+        // quando o usuário navega até eles no carrossel.
+        if (indice === 0) {
+          img.loading = "eager";
+          img.fetchPriority = "high";
+        } else {
+          img.loading = "lazy";
+        }
+        img.decoding = "async";
         img.src = src;
 
         if (banner.link) {
@@ -127,6 +137,7 @@
       var img = document.createElement("img");
       img.className = "img-ph";
       img.loading = "lazy";
+      img.decoding = "async";
       img.src = evento.capa || "";
       img.alt = evento.titulo || "";
       card.appendChild(img);
@@ -204,6 +215,7 @@
       var img = document.createElement("img");
       img.className = "img-ph";
       img.loading = "lazy";
+      img.decoding = "async";
       img.src = evento.capa || "";
       img.alt = evento.titulo || "";
       fotoWrap.appendChild(img);

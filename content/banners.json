@@ -1,23 +1,23 @@
 [
   {
-    "desktop": "assets/img/banner-1-desktop.png",
-    "mobile": "assets/img/banner-1-mobile.png",
+    "desktop": "assets/img/banner-1-desktop.jpg",
+    "mobile": "assets/img/banner-1-mobile.jpg",
     "alt": "Você na nossa história — Coopex Colégio Boa Ideia",
     "link": "",
-    "v": 1793729752000
+    "v": 1793729752001
   },
   {
-    "desktop": "assets/img/banner-2-desktop.png",
-    "mobile": "assets/img/banner-2-mobile.png",
+    "desktop": "assets/img/banner-2-desktop.jpg",
+    "mobile": "assets/img/banner-2-mobile.jpg",
     "alt": "Sua história de sucesso começa aqui — Coopex Colégio Boa Ideia",
     "link": "",
-    "v": 1793729752000
+    "v": 1793729752001
   },
   {
-    "desktop": "assets/img/banner-3-desktop.png",
-    "mobile": "assets/img/banner-3-mobile.png",
+    "desktop": "assets/img/banner-3-desktop.jpg",
+    "mobile": "assets/img/banner-3-mobile.jpg",
     "alt": "Matrículas abertas — Coopex Colégio Boa Ideia",
     "link": "",
-    "v": 1793729752000
+    "v": 1793729752001
   }
 ]

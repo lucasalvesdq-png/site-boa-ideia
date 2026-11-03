@@ -97,6 +97,7 @@
         var img = document.createElement("img");
         img.className = "img-ph";
         img.loading = "lazy";
+        img.decoding = "async";
         img.src = foto.img;
         img.alt = foto.legenda || evento.titulo || "";
         figure.appendChild(img);
