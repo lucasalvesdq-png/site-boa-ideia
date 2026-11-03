@@ -289,6 +289,10 @@
             mobile: mobile,
             mobileBlobPendente: null,
             mobilePreviewUrl: mobile,
+            // Carimbo da última troca das imagens deste banner. Preservamos o
+            // valor existente para não invalidar o cache de banners que não
+            // mudaram; só é renovado abaixo quando uma imagem é de fato trocada.
+            v: b.v != null ? b.v : null,
           };
         });
 
@@ -811,6 +815,9 @@
             return enviarArquivo(caminho, blob).then(function () {
               banner.desktop = caminho;
               banner.desktopBlobPendente = null;
+              // Nome do arquivo é fixo; renova o carimbo para o site baixar a
+              // imagem nova em vez de servir a antiga do cache (1 mês).
+              banner.v = Date.now();
             });
           });
       }
@@ -824,6 +831,7 @@
             return enviarArquivo(caminho, blob).then(function () {
               banner.mobile = caminho;
               banner.mobileBlobPendente = null;
+              banner.v = Date.now();
             });
           });
       }
@@ -865,7 +873,9 @@
       .then(function () {
         publicarStatus.textContent = "Salvando lista de banners...";
         manifestoBannersEnviado = estado.banners.map(function (b) {
-          return { desktop: b.desktop, mobile: b.mobile, alt: b.alt, link: b.link || "" };
+          var item = { desktop: b.desktop, mobile: b.mobile, alt: b.alt, link: b.link || "" };
+          if (b.v != null) item.v = b.v;
+          return item;
         });
         return chamarApi("/api/publish", {
           method: "POST",

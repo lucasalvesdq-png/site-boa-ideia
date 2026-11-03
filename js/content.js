@@ -40,9 +40,22 @@
 
     var mql = window.matchMedia ? window.matchMedia(PONTO_CORTE_MOBILE) : null;
 
+    // Os arquivos de banner têm nome fixo (banner-1-desktop.png, etc.) e o
+    // painel os sobrescreve no mesmo caminho. Como o .htaccess guarda imagens
+    // em cache por 1 mês, sem isto o navegador continuaria mostrando a versão
+    // antiga mesmo depois de trocada. O painel grava um `v` (carimbo da última
+    // troca daquele banner) no manifesto; anexá-lo à URL faz o navegador baixar
+    // a imagem nova só quando ela realmente muda, preservando o cache no resto.
+    function comVersao(caminho, banner) {
+      if (!caminho || !banner || banner.v == null) return caminho;
+      var separador = caminho.indexOf("?") === -1 ? "?" : "&";
+      return caminho + separador + "v=" + encodeURIComponent(banner.v);
+    }
+
     function imagemDoBanner(banner) {
       var mobile = mql && mql.matches;
-      return (mobile && banner.mobile) || banner.desktop || banner.mobile || banner.img || "";
+      var caminho = (mobile && banner.mobile) || banner.desktop || banner.mobile || banner.img || "";
+      return comVersao(caminho, banner);
     }
 
     function desenhar() {

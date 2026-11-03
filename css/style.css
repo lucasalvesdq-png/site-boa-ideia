@@ -1899,6 +1899,9 @@ h3.pendente {
   min-height: 480px;
   max-height: 56.25vw; /* impede corte lateral em monitores 4:3/5:4 — mantém proporção 16:9 */
   line-height: 0;
+  /* Enquanto js/content.js busca content/banners.json e monta os slides, a
+     área fica com o verde da marca — nunca uma imagem antiga. */
+  background: linear-gradient(150deg, var(--verde) 0%, var(--verde-escuro) 100%);
 }
 
 #hero-carrossel .carrossel-trilho {
