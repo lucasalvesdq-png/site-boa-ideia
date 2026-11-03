@@ -1895,13 +1895,27 @@ h3.pendente {
 .hero-banner {
   position: relative;
   overflow: hidden;
-  height: 100vh;
-  min-height: 480px;
-  max-height: 56.25vw; /* impede corte lateral em monitores 4:3/5:4 — mantém proporção 16:9 */
+  width: 100%;
+  /* A altura segue a proporção real do banner-desktop (1920×1080) em vez de
+     vh/vw fixos: min-height e max-height competindo entre si deixavam a
+     faixa de telas tablet (~640–850px) mais baixa que 16:9, cortando as
+     laterais (e o CTA) da imagem. Com aspect-ratio a caixa nunca fica mais
+     "achatada" que a imagem, então object-fit:cover nunca precisa cortar
+     conteúdo de propósito — só sobra de topo/base em telas muito largas. */
+  aspect-ratio: 16 / 9;
+  max-height: 100vh;
   line-height: 0;
   /* Enquanto js/content.js busca content/banners.json e monta os slides, a
      área fica com o verde da marca — nunca uma imagem antiga. */
   background: linear-gradient(150deg, var(--verde) 0%, var(--verde-escuro) 100%);
+}
+
+@media (max-width: 640px) {
+  .hero-banner {
+    /* Mesmo ponto de corte do js/content.js ao escolher banner-mobile — a
+       imagem aí é 1080×1350 (vertical), não 16:9. */
+    aspect-ratio: 4 / 5;
+  }
 }
 
 #hero-carrossel .carrossel-trilho {
